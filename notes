@@ -1,0 +1,13 @@
+
+CREATED on 2022-08-31-01:34:21
+
+NOTE ADDED on 2022-08-31-01:34:55:
+The ant2_o and ant3_o species are turned off in the mechanism file to avoid double counting.
+
+
+NOTE ADDED on 2022-09-06-20:24:10:
+Now running high-NOx No SSPh.
+
+
+NOTE ADDED on 2022-10-16-01:22:50:
+Account of MW assumption (250 g mol-1) when generating the simpleSOM parameters.

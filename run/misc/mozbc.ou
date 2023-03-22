@@ -1,0 +1,2858 @@
+ main_bc_wrfchem: will set boundary conditions in wrfbdy_d01
+ main_bc_wrfchem: will set initial condition in wrfinput_d01
+ mapper: spc_map = co -> CO
+ mapper: spc_map = acet -> CH3COCH3
+ mapper: spc_map = alk3 -> 0.5*BIGALK
+ mapper: spc_map = alk4 -> 0.3*BIGALK
+ mapper: spc_map = alk5 -> 0.2*BIGALK
+ mapper: spc_map = aro1 -> 0.5*TOLUENE
+ mapper: spc_map = aro2 -> 0.5*TOLUENE
+ mapper: spc_map = c2h2 -> C2H2
+ mapper: spc_map = c2h6 -> C2H6
+ mapper: spc_map = c3h6 -> C3H6
+ mapper: spc_map = c3h8 -> C3H8
+ mapper: spc_map = cco_oh -> CH3COOH
+ mapper: spc_map = cooh -> CH3OOH
+ mapper: spc_map = ch4 -> CH4
+ mapper: spc_map = ccho -> CH3CHO
+ mapper: spc_map = cres -> CRESOL
+ mapper: spc_map = ethene -> C2H4
+ mapper: spc_map = etoh -> C2H5OH
+ mapper: spc_map = gly -> GLYOXAL
+ mapper: spc_map = h2o2 -> H2O2
+ mapper: spc_map = n2o5 -> N2O5
+ mapper: spc_map = hcho -> CH2O
+ mapper: spc_map = hcooh -> HCOOH
+ mapper: spc_map = hno3 -> HNO3
+ mapper: spc_map = isoprod -> MVK+MACR
+ mapper: spc_map = isoprene -> ISOP
+ mapper: spc_map = mek -> MEK
+ mapper: spc_map = meoh -> CH3OH
+ mapper: spc_map = methacro -> MACR
+ mapper: spc_map = mvk -> MVK
+ mapper: spc_map = mgly -> CH3COCHO
+ mapper: spc_map = nh3 -> NH3
+ mapper: spc_map = no -> NO
+ mapper: spc_map = no2 -> NO2
+ mapper: spc_map = o3 -> O3
+ mapper: spc_map = ole1 -> C3H6
+ mapper: spc_map = ole2 -> BIGENE
+ mapper: spc_map = pan -> PAN
+ mapper: spc_map = so2 -> SO2
+ mapper: spc_map = terp -> MTERP
+ mapper: spc_map = 
+ oc_a01->0.0093*pom_a1+0.0093*pom_a4+0.7510*soa1_a2+0.0093*soa1_a1+0.7510*soa2_a
+ 2+                   0.0093*soa2_a1+0.7510*soa3_a2+0.0093*soa3_a1+0.7510*soa4_a
+ 2+0.0093*soa4_a1+                   0.7510*soa5_a2+0.0093*soa5_a1;0.5e9
+ mapper: spc_map = 
+ oc_a02->0.1123*pom_a1+0.1123*pom_a4+0.2376*soa1_a2+0.1123*soa1_a1+0.2376*soa2_a
+ 2+                   0.1123*soa2_a1+0.2376*soa3_a2+0.1123*soa3_a1+0.2376*soa4_a
+ 2+0.1123*soa4_a1+                   0.2376*soa5_a2+ 0.1123*soa5_a1;0.5e9
+ mapper: spc_map = 
+ oc_a03->0.3835*pom_a1+0.3835*pom_a4+0.0113*soa1_a2+0.3835*soa1_a1+0.0133*soa2_a
+ 2+                   0.3835*soa2_a1+0.0113*soa3_a2+0.3838*soa3_a1+0.0113*soa4_a
+ 2+0.3838*soa4_a1+                   0.0113*soa5_a2+ 0.3838*soa5_a1;0.5e9
+ mapper: spc_map = 
+ oc_a04->0.3783*pom_a1+0.3783*pom_a4+0.0001*soa1_a2+0.3783*soa1_a1+0.0001*soa2_a
+ 2+                   0.3783*soa2_a1+0.0001*soa3_a2+0.3783*soa3_a1+0.0001*soa4_a
+ 2+0.3783*soa4_a1+                   0.0001*soa5_a2+ 0.3783*soa5_a1;0.5e9
+ mapper: spc_map = 
+ oc_a05->0.1077*pom_a1+0.1077*pom_a4+0.0000*soa1_a2+0.1077*soa1_a1+0.0000*soa2_a
+ 2+                   0.1077*soa2_a1+0.0000*soa3_a2+0.1077*soa3_a1+0.0000*soa4_a
+ 2+0.1077*soa4_a1+                   0.0000*soa5_a2+ 0.1077*soa5_a1;0.5e9
+ mapper: spc_map = 
+ oc_a06->0.0087*pom_a1+0.0087*pom_a4+0.0000*soa1_a2+0.0087*soa1_a1+0.0000*soa2_a
+ 2+                   0.0087*soa2_a1+0.0000*soa3_a2+0.0087*soa3_a1+0.0000*soa4_a
+ 2+0.0087*soa4_a1+                   0.0000*soa5_a2+ 0.0087*soa5_a1;0.5e9
+ mapper: spc_map = 
+ oc_a07->0.0002*pom_a1+0.0002*pom_a4+0.0000*soa1_a2+0.0002*soa1_a1+0.0000*soa2_a
+ 2+                   0.0002*soa2_a1+0.0000*soa3_a2+0.0002*soa3_a1+0.0000*soa4_a
+ 2+0.0002*soa4_a1+                   0.0000*soa5_a2+ 0.0002*soa5_a1;0.5e9
+ mapper: spc_map = 
+ oc_a08->0.0000*pom_a1+0.0000*pom_a4+0.0000*soa1_a2+0.0000*soa1_a1+0.0000*soa2_a
+ 2+                   0.0000*soa2_a1+0.0000*soa3_a2+0.0000*soa3_a1+0.0000*soa4_a
+ 2+0.0000*soa4_a1+                   0.0000*soa5_a2+ 0.0000*soa5_a1;0.5e9
+ mapper: spc_map = bc_a01->0.0093*bc_a1+0.0093*bc_a4;1.e9
+ mapper: spc_map = bc_a02->0.1123*bc_a1+0.1123*bc_a4;1.e9
+ mapper: spc_map = bc_a03->0.3835*bc_a1+0.3835*bc_a4;1.e9
+ mapper: spc_map = bc_a04->0.3783*bc_a1+0.3783*bc_a4;1.e9
+ mapper: spc_map = bc_a05->0.1077*bc_a1+0.1077*bc_a4;1.e9
+ mapper: spc_map = bc_a06->0.0087*bc_a1+0.0087*bc_a4;1.e9
+ mapper: spc_map = bc_a07->0.0002*bc_a1+0.0002*bc_a4;1.e9
+ mapper: spc_map = bc_a08->0.0000*bc_a1+0.0000*bc_a4;1.e9
+ mapper: spc_map = so4_a01->0.7510*so4_a2+0.0093*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = so4_a02->0.2376*so4_a2+0.1123*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = so4_a03->0.0113*so4_a2+0.3835*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = so4_a04->0.0001*so4_a2+0.3783*so4_a1+0.0002*so4_a3;1.e9
+ mapper: spc_map = so4_a05->0.0000*so4_a2+0.1077*so4_a1+0.0061*so4_a3;1.e9
+ mapper: spc_map = so4_a06->0.0000*so4_a2+0.0087*so4_a1+0.0934*so4_a3;1.e9
+ mapper: spc_map = so4_a07->0.0000*so4_a2+0.0002*so4_a1+0.4020*so4_a3;1.e9
+ mapper: spc_map = so4_a08->0.0000*so4_a2+0.0000*so4_a1+0.4983*so4_a3;1.e9
+ mapper: spc_map = nh4_a01->0.1410*so4_a2+0.0033*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = nh4_a02->0.0446*so4_a2+0.0017*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = nh4_a03->0.0021*so4_a2+0.0210*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = nh4_a04->0.0000*so4_a2+0.0720*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = nh4_a05->0.0000*so4_a2+0.0202*so4_a1+0.0011*so4_a3;1.e9
+ mapper: spc_map = nh4_a06->0.0000*so4_a2+0.0001*so4_a1+0.0175*so4_a3;1.e9
+ mapper: spc_map = nh4_a07->0.0000*so4_a2+0.0000*so4_a1+0.0755*so4_a3;1.e9
+ mapper: spc_map = nh4_a08->0.0000*so4_a2+0.0000*so4_a1+0.0935*so4_a3;1.e9
+ mapper: spc_map = no3_a01->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = no3_a02->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = no3_a03->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = no3_a04->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = no3_a05->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = no3_a06->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = no3_a07->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = no3_a08->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: spc_map = na_a01->0.2954*ncl_a2+0.0037*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = na_a02->0.0935*ncl_a2+0.0442*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = na_a03->0.0045*ncl_a2+0.1509*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = na_a04->0.0000*ncl_a2+0.1488*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = na_a05->0.0000*ncl_a2+0.0424*ncl_a1+0.0024*ncl_a3;1.e9
+ mapper: spc_map = na_a06->0.0000*ncl_a2+0.0034*ncl_a1+0.0367*ncl_a3;1.e9
+ mapper: spc_map = na_a07->0.0000*ncl_a2+0.0000*ncl_a1+0.1582*ncl_a3;1.e9
+ mapper: spc_map = na_a08->0.0000*ncl_a2+0.0000*ncl_a1+0.1960*ncl_a3;1.e9
+ mapper: spc_map = cl_a01->0.4555*ncl_a2+0.0056*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = cl_a02->0.1441*ncl_a2+0.0681*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = cl_a03->0.0068*ncl_a2+0.2326*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = cl_a04->0.0000*ncl_a2+0.2295*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: spc_map = cl_a05->0.0000*ncl_a2+0.0654*ncl_a1+0.0037*ncl_a3;1.e9
+ mapper: spc_map = cl_a06->0.0000*ncl_a2+0.0055*ncl_a1+0.0567*ncl_a3;1.e9
+ mapper: spc_map = cl_a07->0.0000*ncl_a2+0.0001*ncl_a1+0.2439*ncl_a3;1.e9
+ mapper: spc_map = cl_a08->0.0000*ncl_a2+0.0000*ncl_a1+0.3023*ncl_a3;1.e9
+ mapper: spc_map = oin_a01->0.7510*dst_a2+0.0093*dst_a1+0.0000*dst_a3;1.e9
+ mapper: spc_map = oin_a02->0.2376*dst_a2+0.1123*dst_a1+0.0000*dst_a3;1.e9
+ mapper: spc_map = oin_a03->0.0113*dst_a2+0.3835*dst_a1+0.0000*dst_a3;1.e9
+ mapper: spc_map = oin_a04->0.0001*dst_a2+0.3783*dst_a1+0.0002*dst_a3;1.e9
+ mapper: spc_map = oin_a05->0.0000*dst_a2+0.1077*dst_a1+0.0061*dst_a3;1.e9
+ mapper: spc_map = oin_a06->0.0000*dst_a2+0.0087*dst_a1+0.0934*dst_a3;1.e9
+ mapper: spc_map = oin_a07->0.0000*dst_a2+0.0002*dst_a1+0.4020*dst_a3;1.e9
+ mapper: spc_map = oin_a08->0.0000*dst_a2+0.0000*dst_a1+0.4983*dst_a3;1.e9
+ mapper: spc_map = num_a01->0.9502*num_a2+0.2509*num_a1+0.0000*num_a3;1.0
+ mapper: spc_map = num_a02->0.0494*num_a2+0.4626*num_a1+0.0000*num_a3;1.0
+ mapper: spc_map = num_a03->0.0004*num_a2+0.2470*num_a1+0.0007*num_a3;1.0
+ mapper: spc_map = num_a04->0.0000*num_a2+0.0377*num_a1+0.0232*num_a3;1.0
+ mapper: spc_map = num_a05->0.0000*num_a2+0.0016*num_a1+0.1886*num_a3;1.0
+ mapper: spc_map = num_a06->0.0000*num_a2+0.0000*num_a1+0.4372*num_a3;1.0
+ mapper: spc_map = num_a07->0.0000*num_a2+0.0000*num_a1+0.2935*num_a3;1.0
+ mapper: spc_map = num_a08->0.0000*num_a2+0.0000*num_a1+0.0566*num_a3;1.0
+ mapper: mstring = co->CO
+ mapper: there are            1  mozart species for 
+ co                              
+ mapper: send =            6
+ mapper: mstring = acet->CH3COCH3
+ mapper: there are            1  mozart species for 
+ acet                            
+ mapper: send =           14
+ mapper: mstring = alk3->0.5*BIGALK
+ mapper: there are            1  mozart species for 
+ alk3                            
+ mapper: send =           16
+ mapper; coefficient 0.5 =   0.5000000    
+ mapper: mstring = alk4->0.3*BIGALK
+ mapper: there are            1  mozart species for 
+ alk4                            
+ mapper: send =           16
+ mapper; coefficient 0.3 =   0.3000000    
+ mapper: mstring = alk5->0.2*BIGALK
+ mapper: there are            1  mozart species for 
+ alk5                            
+ mapper: send =           16
+ mapper; coefficient 0.2 =   0.2000000    
+ mapper: mstring = aro1->0.5*TOLUENE
+ mapper: there are            1  mozart species for 
+ aro1                            
+ mapper: send =           17
+ mapper; coefficient 0.5 =   0.5000000    
+ mapper: mstring = aro2->0.5*TOLUENE
+ mapper: there are            1  mozart species for 
+ aro2                            
+ mapper: send =           17
+ mapper; coefficient 0.5 =   0.5000000    
+ mapper: mstring = c2h2->C2H2
+ mapper: there are            1  mozart species for 
+ c2h2                            
+ mapper: send =           10
+ mapper: mstring = c2h6->C2H6
+ mapper: there are            1  mozart species for 
+ c2h6                            
+ mapper: send =           10
+ mapper: mstring = c3h6->C3H6
+ mapper: there are            1  mozart species for 
+ c3h6                            
+ mapper: send =           10
+ mapper: mstring = c3h8->C3H8
+ mapper: there are            1  mozart species for 
+ c3h8                            
+ mapper: send =           10
+ mapper: mstring = cco_oh->CH3COOH
+ mapper: there are            1  mozart species for 
+ cco_oh                          
+ mapper: send =           15
+ mapper: mstring = cooh->CH3OOH
+ mapper: there are            1  mozart species for 
+ cooh                            
+ mapper: send =           12
+ mapper: mstring = ch4->CH4
+ mapper: there are            1  mozart species for 
+ ch4                             
+ mapper: send =            8
+ mapper: mstring = ccho->CH3CHO
+ mapper: there are            1  mozart species for 
+ ccho                            
+ mapper: send =           12
+ mapper: mstring = cres->CRESOL
+ mapper: there are            1  mozart species for 
+ cres                            
+ mapper: send =           12
+ mapper: mstring = ethene->C2H4
+ mapper: there are            1  mozart species for 
+ ethene                          
+ mapper: send =           12
+ mapper: mstring = etoh->C2H5OH
+ mapper: there are            1  mozart species for 
+ etoh                            
+ mapper: send =           12
+ mapper: mstring = gly->GLYOXAL
+ mapper: there are            1  mozart species for 
+ gly                             
+ mapper: send =           12
+ mapper: mstring = h2o2->H2O2
+ mapper: there are            1  mozart species for 
+ h2o2                            
+ mapper: send =           10
+ mapper: mstring = n2o5->N2O5
+ mapper: there are            1  mozart species for 
+ n2o5                            
+ mapper: send =           10
+ mapper: mstring = hcho->CH2O
+ mapper: there are            1  mozart species for 
+ hcho                            
+ mapper: send =           10
+ mapper: mstring = hcooh->HCOOH
+ mapper: there are            1  mozart species for 
+ hcooh                           
+ mapper: send =           12
+ mapper: mstring = hno3->HNO3
+ mapper: there are            1  mozart species for 
+ hno3                            
+ mapper: send =           10
+ mapper: mstring = isoprod->MVK+MACR
+ mapper: there are            2  mozart species for 
+ isoprod                         
+ mapper: send =           17
+ mapper: su,string =            4 MVK
+ mapper: sl,send =           14          17
+ mapper: string  = MACR
+ mapper: mstring = isoprene->ISOP
+ mapper: there are            1  mozart species for 
+ isoprene                        
+ mapper: send =           14
+ mapper: mstring = mek->MEK
+ mapper: there are            1  mozart species for 
+ mek                             
+ mapper: send =            8
+ mapper: mstring = meoh->CH3OH
+ mapper: there are            1  mozart species for 
+ meoh                            
+ mapper: send =           11
+ mapper: mstring = methacro->MACR
+ mapper: there are            1  mozart species for 
+ methacro                        
+ mapper: send =           14
+ mapper: mstring = mvk->MVK
+ mapper: there are            1  mozart species for 
+ mvk                             
+ mapper: send =            8
+ mapper: mstring = mgly->CH3COCHO
+ mapper: there are            1  mozart species for 
+ mgly                            
+ mapper: send =           14
+ mapper: mstring = nh3->NH3
+ mapper: there are            1  mozart species for 
+ nh3                             
+ mapper: send =            8
+ mapper: mstring = no->NO
+ mapper: there are            1  mozart species for 
+ no                              
+ mapper: send =            6
+ mapper: mstring = no2->NO2
+ mapper: there are            1  mozart species for 
+ no2                             
+ mapper: send =            8
+ mapper: mstring = o3->O3
+ mapper: there are            1  mozart species for 
+ o3                              
+ mapper: send =            6
+ mapper: mstring = ole1->C3H6
+ mapper: there are            1  mozart species for 
+ ole1                            
+ mapper: send =           10
+ mapper: mstring = ole2->BIGENE
+ mapper: there are            1  mozart species for 
+ ole2                            
+ mapper: send =           12
+ mapper: mstring = pan->PAN
+ mapper: there are            1  mozart species for 
+ pan                             
+ mapper: send =            8
+ mapper: mstring = so2->SO2
+ mapper: there are            1  mozart species for 
+ so2                             
+ mapper: send =            8
+ mapper: mstring = terp->MTERP
+ mapper: there are            1  mozart species for 
+ terp                            
+ mapper: send =           11
+ mapper: mstring = 
+ oc_a01->0.0093*pom_a1+0.0093*pom_a4+0.7510*soa1_a2+0.0093*soa1_a1+0.7510*soa2_a
+ 2+0.0093*soa2_a1+0.7510*soa3_a2+0.0093*soa3_a1+0.7510*soa4_a2+0.0093*soa4_a1+0.
+ 7510*soa5_a2+0.0093*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a01                          
+ mapper: send =          185
+ mapper: su,string =           14 0.0093*pom_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.0093*pom_a4+0.7510*soa1_a2+0.0093*soa1_a1+0.7510*soa2_a2+0.0093*soa2_a1+0.751
+ 0*soa3_a2+0.0093*soa3_a1+0.7510*soa4_a2+0.0093*soa4_a1+0.7510*soa5_a2+0.0093*so
+ a5_a1
+ mapper: su,string =           14 0.0093*pom_a4
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.7510*soa1_a2+0.0093*soa1_a1+0.7510*soa2_a2+0.0093*soa2_a1+0.7510*soa3_a2+0.00
+ 93*soa3_a1+0.7510*soa4_a2+0.0093*soa4_a1+0.7510*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.7510*soa1_a2
+ mapper; coefficient 0.7510 =   0.7510000    
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.0093*soa1_a1+0.7510*soa2_a2+0.0093*soa2_a1+0.7510*soa3_a2+0.0093*soa3_a1+0.75
+ 10*soa4_a2+0.0093*soa4_a1+0.7510*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.0093*soa1_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.7510*soa2_a2+0.0093*soa2_a1+0.7510*soa3_a2+0.0093*soa3_a1+0.7510*soa4_a2+0.00
+ 93*soa4_a1+0.7510*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.7510*soa2_a2
+ mapper; coefficient 0.7510 =   0.7510000    
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.0093*soa2_a1+0.7510*soa3_a2+0.0093*soa3_a1+0.7510*soa4_a2+0.0093*soa4_a1+0.75
+ 10*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.0093*soa2_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.7510*soa3_a2+0.0093*soa3_a1+0.7510*soa4_a2+0.0093*soa4_a1+0.7510*soa5_a2+0.00
+ 93*soa5_a1
+ mapper: su,string =           15 0.7510*soa3_a2
+ mapper; coefficient 0.7510 =   0.7510000    
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.0093*soa3_a1+0.7510*soa4_a2+0.0093*soa4_a1+0.7510*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.0093*soa3_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =          127         185
+ mapper: string  = 0.7510*soa4_a2+0.0093*soa4_a1+0.7510*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.7510*soa4_a2
+ mapper; coefficient 0.7510 =   0.7510000    
+ mapper: sl,send =          142         185
+ mapper: string  = 0.0093*soa4_a1+0.7510*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.0093*soa4_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =          157         185
+ mapper: string  = 0.7510*soa5_a2+0.0093*soa5_a1
+ mapper: su,string =           15 0.7510*soa5_a2
+ mapper; coefficient 0.7510 =   0.7510000    
+ mapper: sl,send =          172         185
+ mapper: string  = 0.0093*soa5_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = 
+ oc_a02->0.1123*pom_a1+0.1123*pom_a4+0.2376*soa1_a2+0.1123*soa1_a1+0.2376*soa2_a
+ 2+0.1123*soa2_a1+0.2376*soa3_a2+0.1123*soa3_a1+0.2376*soa4_a2+0.1123*soa4_a1+0.
+ 2376*soa5_a2+0.1123*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a02                          
+ mapper: send =          185
+ mapper: su,string =           14 0.1123*pom_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.1123*pom_a4+0.2376*soa1_a2+0.1123*soa1_a1+0.2376*soa2_a2+0.1123*soa2_a1+0.237
+ 6*soa3_a2+0.1123*soa3_a1+0.2376*soa4_a2+0.1123*soa4_a1+0.2376*soa5_a2+0.1123*so
+ a5_a1
+ mapper: su,string =           14 0.1123*pom_a4
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.2376*soa1_a2+0.1123*soa1_a1+0.2376*soa2_a2+0.1123*soa2_a1+0.2376*soa3_a2+0.11
+ 23*soa3_a1+0.2376*soa4_a2+0.1123*soa4_a1+0.2376*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.2376*soa1_a2
+ mapper; coefficient 0.2376 =   0.2376000    
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.1123*soa1_a1+0.2376*soa2_a2+0.1123*soa2_a1+0.2376*soa3_a2+0.1123*soa3_a1+0.23
+ 76*soa4_a2+0.1123*soa4_a1+0.2376*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.1123*soa1_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.2376*soa2_a2+0.1123*soa2_a1+0.2376*soa3_a2+0.1123*soa3_a1+0.2376*soa4_a2+0.11
+ 23*soa4_a1+0.2376*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.2376*soa2_a2
+ mapper; coefficient 0.2376 =   0.2376000    
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.1123*soa2_a1+0.2376*soa3_a2+0.1123*soa3_a1+0.2376*soa4_a2+0.1123*soa4_a1+0.23
+ 76*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.1123*soa2_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.2376*soa3_a2+0.1123*soa3_a1+0.2376*soa4_a2+0.1123*soa4_a1+0.2376*soa5_a2+0.11
+ 23*soa5_a1
+ mapper: su,string =           15 0.2376*soa3_a2
+ mapper; coefficient 0.2376 =   0.2376000    
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.1123*soa3_a1+0.2376*soa4_a2+0.1123*soa4_a1+0.2376*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.1123*soa3_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =          127         185
+ mapper: string  = 0.2376*soa4_a2+0.1123*soa4_a1+0.2376*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.2376*soa4_a2
+ mapper; coefficient 0.2376 =   0.2376000    
+ mapper: sl,send =          142         185
+ mapper: string  = 0.1123*soa4_a1+0.2376*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.1123*soa4_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =          157         185
+ mapper: string  = 0.2376*soa5_a2+0.1123*soa5_a1
+ mapper: su,string =           15 0.2376*soa5_a2
+ mapper; coefficient 0.2376 =   0.2376000    
+ mapper: sl,send =          172         185
+ mapper: string  = 0.1123*soa5_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = 
+ oc_a03->0.3835*pom_a1+0.3835*pom_a4+0.0113*soa1_a2+0.3835*soa1_a1+0.0133*soa2_a
+ 2+0.3835*soa2_a1+0.0113*soa3_a2+0.3838*soa3_a1+0.0113*soa4_a2+0.3838*soa4_a1+0.
+ 0113*soa5_a2+0.3838*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a03                          
+ mapper: send =          185
+ mapper: su,string =           14 0.3835*pom_a1
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.3835*pom_a4+0.0113*soa1_a2+0.3835*soa1_a1+0.0133*soa2_a2+0.3835*soa2_a1+0.011
+ 3*soa3_a2+0.3838*soa3_a1+0.0113*soa4_a2+0.3838*soa4_a1+0.0113*soa5_a2+0.3838*so
+ a5_a1
+ mapper: su,string =           14 0.3835*pom_a4
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.0113*soa1_a2+0.3835*soa1_a1+0.0133*soa2_a2+0.3835*soa2_a1+0.0113*soa3_a2+0.38
+ 38*soa3_a1+0.0113*soa4_a2+0.3838*soa4_a1+0.0113*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.0113*soa1_a2
+ mapper; coefficient 0.0113 =   1.1300000E-02
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.3835*soa1_a1+0.0133*soa2_a2+0.3835*soa2_a1+0.0113*soa3_a2+0.3838*soa3_a1+0.01
+ 13*soa4_a2+0.3838*soa4_a1+0.0113*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.3835*soa1_a1
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.0133*soa2_a2+0.3835*soa2_a1+0.0113*soa3_a2+0.3838*soa3_a1+0.0113*soa4_a2+0.38
+ 38*soa4_a1+0.0113*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.0133*soa2_a2
+ mapper; coefficient 0.0133 =   1.3300000E-02
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.3835*soa2_a1+0.0113*soa3_a2+0.3838*soa3_a1+0.0113*soa4_a2+0.3838*soa4_a1+0.01
+ 13*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.3835*soa2_a1
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.0113*soa3_a2+0.3838*soa3_a1+0.0113*soa4_a2+0.3838*soa4_a1+0.0113*soa5_a2+0.38
+ 38*soa5_a1
+ mapper: su,string =           15 0.0113*soa3_a2
+ mapper; coefficient 0.0113 =   1.1300000E-02
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.3838*soa3_a1+0.0113*soa4_a2+0.3838*soa4_a1+0.0113*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.3838*soa3_a1
+ mapper; coefficient 0.3838 =   0.3838000    
+ mapper: sl,send =          127         185
+ mapper: string  = 0.0113*soa4_a2+0.3838*soa4_a1+0.0113*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.0113*soa4_a2
+ mapper; coefficient 0.0113 =   1.1300000E-02
+ mapper: sl,send =          142         185
+ mapper: string  = 0.3838*soa4_a1+0.0113*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.3838*soa4_a1
+ mapper; coefficient 0.3838 =   0.3838000    
+ mapper: sl,send =          157         185
+ mapper: string  = 0.0113*soa5_a2+0.3838*soa5_a1
+ mapper: su,string =           15 0.0113*soa5_a2
+ mapper; coefficient 0.0113 =   1.1300000E-02
+ mapper: sl,send =          172         185
+ mapper: string  = 0.3838*soa5_a1
+ mapper; coefficient 0.3838 =   0.3838000    
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = 
+ oc_a04->0.3783*pom_a1+0.3783*pom_a4+0.0001*soa1_a2+0.3783*soa1_a1+0.0001*soa2_a
+ 2+0.3783*soa2_a1+0.0001*soa3_a2+0.3783*soa3_a1+0.0001*soa4_a2+0.3783*soa4_a1+0.
+ 0001*soa5_a2+0.3783*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a04                          
+ mapper: send =          185
+ mapper: su,string =           14 0.3783*pom_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.3783*pom_a4+0.0001*soa1_a2+0.3783*soa1_a1+0.0001*soa2_a2+0.3783*soa2_a1+0.000
+ 1*soa3_a2+0.3783*soa3_a1+0.0001*soa4_a2+0.3783*soa4_a1+0.0001*soa5_a2+0.3783*so
+ a5_a1
+ mapper: su,string =           14 0.3783*pom_a4
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.0001*soa1_a2+0.3783*soa1_a1+0.0001*soa2_a2+0.3783*soa2_a1+0.0001*soa3_a2+0.37
+ 83*soa3_a1+0.0001*soa4_a2+0.3783*soa4_a1+0.0001*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.0001*soa1_a2
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.3783*soa1_a1+0.0001*soa2_a2+0.3783*soa2_a1+0.0001*soa3_a2+0.3783*soa3_a1+0.00
+ 01*soa4_a2+0.3783*soa4_a1+0.0001*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.3783*soa1_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.0001*soa2_a2+0.3783*soa2_a1+0.0001*soa3_a2+0.3783*soa3_a1+0.0001*soa4_a2+0.37
+ 83*soa4_a1+0.0001*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.0001*soa2_a2
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.3783*soa2_a1+0.0001*soa3_a2+0.3783*soa3_a1+0.0001*soa4_a2+0.3783*soa4_a1+0.00
+ 01*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.3783*soa2_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.0001*soa3_a2+0.3783*soa3_a1+0.0001*soa4_a2+0.3783*soa4_a1+0.0001*soa5_a2+0.37
+ 83*soa5_a1
+ mapper: su,string =           15 0.0001*soa3_a2
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.3783*soa3_a1+0.0001*soa4_a2+0.3783*soa4_a1+0.0001*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.3783*soa3_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =          127         185
+ mapper: string  = 0.0001*soa4_a2+0.3783*soa4_a1+0.0001*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.0001*soa4_a2
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =          142         185
+ mapper: string  = 0.3783*soa4_a1+0.0001*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.3783*soa4_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =          157         185
+ mapper: string  = 0.0001*soa5_a2+0.3783*soa5_a1
+ mapper: su,string =           15 0.0001*soa5_a2
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =          172         185
+ mapper: string  = 0.3783*soa5_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = 
+ oc_a05->0.1077*pom_a1+0.1077*pom_a4+0.0000*soa1_a2+0.1077*soa1_a1+0.0000*soa2_a
+ 2+0.1077*soa2_a1+0.0000*soa3_a2+0.1077*soa3_a1+0.0000*soa4_a2+0.1077*soa4_a1+0.
+ 0000*soa5_a2+0.1077*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a05                          
+ mapper: send =          185
+ mapper: su,string =           14 0.1077*pom_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.1077*pom_a4+0.0000*soa1_a2+0.1077*soa1_a1+0.0000*soa2_a2+0.1077*soa2_a1+0.000
+ 0*soa3_a2+0.1077*soa3_a1+0.0000*soa4_a2+0.1077*soa4_a1+0.0000*soa5_a2+0.1077*so
+ a5_a1
+ mapper: su,string =           14 0.1077*pom_a4
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.0000*soa1_a2+0.1077*soa1_a1+0.0000*soa2_a2+0.1077*soa2_a1+0.0000*soa3_a2+0.10
+ 77*soa3_a1+0.0000*soa4_a2+0.1077*soa4_a1+0.0000*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.0000*soa1_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.1077*soa1_a1+0.0000*soa2_a2+0.1077*soa2_a1+0.0000*soa3_a2+0.1077*soa3_a1+0.00
+ 00*soa4_a2+0.1077*soa4_a1+0.0000*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.1077*soa1_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.0000*soa2_a2+0.1077*soa2_a1+0.0000*soa3_a2+0.1077*soa3_a1+0.0000*soa4_a2+0.10
+ 77*soa4_a1+0.0000*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.0000*soa2_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.1077*soa2_a1+0.0000*soa3_a2+0.1077*soa3_a1+0.0000*soa4_a2+0.1077*soa4_a1+0.00
+ 00*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.1077*soa2_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.0000*soa3_a2+0.1077*soa3_a1+0.0000*soa4_a2+0.1077*soa4_a1+0.0000*soa5_a2+0.10
+ 77*soa5_a1
+ mapper: su,string =           15 0.0000*soa3_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.1077*soa3_a1+0.0000*soa4_a2+0.1077*soa4_a1+0.0000*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.1077*soa3_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =          127         185
+ mapper: string  = 0.0000*soa4_a2+0.1077*soa4_a1+0.0000*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.0000*soa4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          142         185
+ mapper: string  = 0.1077*soa4_a1+0.0000*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.1077*soa4_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =          157         185
+ mapper: string  = 0.0000*soa5_a2+0.1077*soa5_a1
+ mapper: su,string =           15 0.0000*soa5_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          172         185
+ mapper: string  = 0.1077*soa5_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = 
+ oc_a06->0.0087*pom_a1+0.0087*pom_a4+0.0000*soa1_a2+0.0087*soa1_a1+0.0000*soa2_a
+ 2+0.0087*soa2_a1+0.0000*soa3_a2+0.0087*soa3_a1+0.0000*soa4_a2+0.0087*soa4_a1+0.
+ 0000*soa5_a2+0.0087*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a06                          
+ mapper: send =          185
+ mapper: su,string =           14 0.0087*pom_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.0087*pom_a4+0.0000*soa1_a2+0.0087*soa1_a1+0.0000*soa2_a2+0.0087*soa2_a1+0.000
+ 0*soa3_a2+0.0087*soa3_a1+0.0000*soa4_a2+0.0087*soa4_a1+0.0000*soa5_a2+0.0087*so
+ a5_a1
+ mapper: su,string =           14 0.0087*pom_a4
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.0000*soa1_a2+0.0087*soa1_a1+0.0000*soa2_a2+0.0087*soa2_a1+0.0000*soa3_a2+0.00
+ 87*soa3_a1+0.0000*soa4_a2+0.0087*soa4_a1+0.0000*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0000*soa1_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.0087*soa1_a1+0.0000*soa2_a2+0.0087*soa2_a1+0.0000*soa3_a2+0.0087*soa3_a1+0.00
+ 00*soa4_a2+0.0087*soa4_a1+0.0000*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0087*soa1_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.0000*soa2_a2+0.0087*soa2_a1+0.0000*soa3_a2+0.0087*soa3_a1+0.0000*soa4_a2+0.00
+ 87*soa4_a1+0.0000*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0000*soa2_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.0087*soa2_a1+0.0000*soa3_a2+0.0087*soa3_a1+0.0000*soa4_a2+0.0087*soa4_a1+0.00
+ 00*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0087*soa2_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.0000*soa3_a2+0.0087*soa3_a1+0.0000*soa4_a2+0.0087*soa4_a1+0.0000*soa5_a2+0.00
+ 87*soa5_a1
+ mapper: su,string =           15 0.0000*soa3_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.0087*soa3_a1+0.0000*soa4_a2+0.0087*soa4_a1+0.0000*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0087*soa3_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =          127         185
+ mapper: string  = 0.0000*soa4_a2+0.0087*soa4_a1+0.0000*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0000*soa4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          142         185
+ mapper: string  = 0.0087*soa4_a1+0.0000*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0087*soa4_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =          157         185
+ mapper: string  = 0.0000*soa5_a2+0.0087*soa5_a1
+ mapper: su,string =           15 0.0000*soa5_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          172         185
+ mapper: string  = 0.0087*soa5_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = 
+ oc_a07->0.0002*pom_a1+0.0002*pom_a4+0.0000*soa1_a2+0.0002*soa1_a1+0.0000*soa2_a
+ 2+0.0002*soa2_a1+0.0000*soa3_a2+0.0002*soa3_a1+0.0000*soa4_a2+0.0002*soa4_a1+0.
+ 0000*soa5_a2+0.0002*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a07                          
+ mapper: send =          185
+ mapper: su,string =           14 0.0002*pom_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.0002*pom_a4+0.0000*soa1_a2+0.0002*soa1_a1+0.0000*soa2_a2+0.0002*soa2_a1+0.000
+ 0*soa3_a2+0.0002*soa3_a1+0.0000*soa4_a2+0.0002*soa4_a1+0.0000*soa5_a2+0.0002*so
+ a5_a1
+ mapper: su,string =           14 0.0002*pom_a4
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.0000*soa1_a2+0.0002*soa1_a1+0.0000*soa2_a2+0.0002*soa2_a1+0.0000*soa3_a2+0.00
+ 02*soa3_a1+0.0000*soa4_a2+0.0002*soa4_a1+0.0000*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0000*soa1_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.0002*soa1_a1+0.0000*soa2_a2+0.0002*soa2_a1+0.0000*soa3_a2+0.0002*soa3_a1+0.00
+ 00*soa4_a2+0.0002*soa4_a1+0.0000*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0002*soa1_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.0000*soa2_a2+0.0002*soa2_a1+0.0000*soa3_a2+0.0002*soa3_a1+0.0000*soa4_a2+0.00
+ 02*soa4_a1+0.0000*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0000*soa2_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.0002*soa2_a1+0.0000*soa3_a2+0.0002*soa3_a1+0.0000*soa4_a2+0.0002*soa4_a1+0.00
+ 00*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0002*soa2_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.0000*soa3_a2+0.0002*soa3_a1+0.0000*soa4_a2+0.0002*soa4_a1+0.0000*soa5_a2+0.00
+ 02*soa5_a1
+ mapper: su,string =           15 0.0000*soa3_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.0002*soa3_a1+0.0000*soa4_a2+0.0002*soa4_a1+0.0000*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0002*soa3_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =          127         185
+ mapper: string  = 0.0000*soa4_a2+0.0002*soa4_a1+0.0000*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0000*soa4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          142         185
+ mapper: string  = 0.0002*soa4_a1+0.0000*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0002*soa4_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =          157         185
+ mapper: string  = 0.0000*soa5_a2+0.0002*soa5_a1
+ mapper: su,string =           15 0.0000*soa5_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          172         185
+ mapper: string  = 0.0002*soa5_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = 
+ oc_a08->0.0000*pom_a1+0.0000*pom_a4+0.0000*soa1_a2+0.0000*soa1_a1+0.0000*soa2_a
+ 2+0.0000*soa2_a1+0.0000*soa3_a2+0.0000*soa3_a1+0.0000*soa4_a2+0.0000*soa4_a1+0.
+ 0000*soa5_a2+0.0000*soa5_a1;0.5e9
+ mapper: there are           12  mozart species for 
+ oc_a08                          
+ mapper: send =          185
+ mapper: su,string =           14 0.0000*pom_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23         185
+ mapper: string  = 
+ 0.0000*pom_a4+0.0000*soa1_a2+0.0000*soa1_a1+0.0000*soa2_a2+0.0000*soa2_a1+0.000
+ 0*soa3_a2+0.0000*soa3_a1+0.0000*soa4_a2+0.0000*soa4_a1+0.0000*soa5_a2+0.0000*so
+ a5_a1
+ mapper: su,string =           14 0.0000*pom_a4
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           37         185
+ mapper: string  = 
+ 0.0000*soa1_a2+0.0000*soa1_a1+0.0000*soa2_a2+0.0000*soa2_a1+0.0000*soa3_a2+0.00
+ 00*soa3_a1+0.0000*soa4_a2+0.0000*soa4_a1+0.0000*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa1_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           52         185
+ mapper: string  = 
+ 0.0000*soa1_a1+0.0000*soa2_a2+0.0000*soa2_a1+0.0000*soa3_a2+0.0000*soa3_a1+0.00
+ 00*soa4_a2+0.0000*soa4_a1+0.0000*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa1_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           67         185
+ mapper: string  = 
+ 0.0000*soa2_a2+0.0000*soa2_a1+0.0000*soa3_a2+0.0000*soa3_a1+0.0000*soa4_a2+0.00
+ 00*soa4_a1+0.0000*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa2_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           82         185
+ mapper: string  = 
+ 0.0000*soa2_a1+0.0000*soa3_a2+0.0000*soa3_a1+0.0000*soa4_a2+0.0000*soa4_a1+0.00
+ 00*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa2_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           97         185
+ mapper: string  = 
+ 0.0000*soa3_a2+0.0000*soa3_a1+0.0000*soa4_a2+0.0000*soa4_a1+0.0000*soa5_a2+0.00
+ 00*soa5_a1
+ mapper: su,string =           15 0.0000*soa3_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          112         185
+ mapper: string  = 
+ 0.0000*soa3_a1+0.0000*soa4_a2+0.0000*soa4_a1+0.0000*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa3_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          127         185
+ mapper: string  = 0.0000*soa4_a2+0.0000*soa4_a1+0.0000*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          142         185
+ mapper: string  = 0.0000*soa4_a1+0.0000*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          157         185
+ mapper: string  = 0.0000*soa5_a2+0.0000*soa5_a1
+ mapper: su,string =           15 0.0000*soa5_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =          172         185
+ mapper: string  = 0.0000*soa5_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 0.5e9                                                                          
+                                                                                
+                                                                                
+                                                                              
+  =   5.0000000E+08
+ mapper: mstring = bc_a01->0.0093*bc_a1+0.0093*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a01                          
+ mapper: send =           33
+ mapper: su,string =           13 0.0093*bc_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =           22          33
+ mapper: string  = 0.0093*bc_a4
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = bc_a02->0.1123*bc_a1+0.1123*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a02                          
+ mapper: send =           33
+ mapper: su,string =           13 0.1123*bc_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =           22          33
+ mapper: string  = 0.1123*bc_a4
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = bc_a03->0.3835*bc_a1+0.3835*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a03                          
+ mapper: send =           33
+ mapper: su,string =           13 0.3835*bc_a1
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper: sl,send =           22          33
+ mapper: string  = 0.3835*bc_a4
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = bc_a04->0.3783*bc_a1+0.3783*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a04                          
+ mapper: send =           33
+ mapper: su,string =           13 0.3783*bc_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =           22          33
+ mapper: string  = 0.3783*bc_a4
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = bc_a05->0.1077*bc_a1+0.1077*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a05                          
+ mapper: send =           33
+ mapper: su,string =           13 0.1077*bc_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =           22          33
+ mapper: string  = 0.1077*bc_a4
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = bc_a06->0.0087*bc_a1+0.0087*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a06                          
+ mapper: send =           33
+ mapper: su,string =           13 0.0087*bc_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =           22          33
+ mapper: string  = 0.0087*bc_a4
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = bc_a07->0.0002*bc_a1+0.0002*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a07                          
+ mapper: send =           33
+ mapper: su,string =           13 0.0002*bc_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =           22          33
+ mapper: string  = 0.0002*bc_a4
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = bc_a08->0.0000*bc_a1+0.0000*bc_a4;1.e9
+ mapper: there are            2  mozart species for 
+ bc_a08                          
+ mapper: send =           33
+ mapper: su,string =           13 0.0000*bc_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           22          33
+ mapper: string  = 0.0000*bc_a4
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         = 
+  1.0000000E+09
+ mapper: mstring = so4_a01->0.7510*so4_a2+0.0093*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a01                         
+ mapper: send =           50
+ mapper: su,string =           14 0.7510*so4_a2
+ mapper; coefficient 0.7510 =   0.7510000    
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0093*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0093*so4_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = so4_a02->0.2376*so4_a2+0.1123*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a02                         
+ mapper: send =           50
+ mapper: su,string =           14 0.2376*so4_a2
+ mapper; coefficient 0.2376 =   0.2376000    
+ mapper: sl,send =           24          50
+ mapper: string  = 0.1123*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.1123*so4_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = so4_a03->0.0113*so4_a2+0.3835*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a03                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0113*so4_a2
+ mapper; coefficient 0.0113 =   1.1300000E-02
+ mapper: sl,send =           24          50
+ mapper: string  = 0.3835*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.3835*so4_a1
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = so4_a04->0.0001*so4_a2+0.3783*so4_a1+0.0002*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a04                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0001*so4_a2
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =           24          50
+ mapper: string  = 0.3783*so4_a1+0.0002*so4_a3
+ mapper: su,string =           14 0.3783*so4_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0002*so4_a3
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = so4_a05->0.0000*so4_a2+0.1077*so4_a1+0.0061*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a05                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.1077*so4_a1+0.0061*so4_a3
+ mapper: su,string =           14 0.1077*so4_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0061*so4_a3
+ mapper; coefficient 0.0061 =   6.0999999E-03
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = so4_a06->0.0000*so4_a2+0.0087*so4_a1+0.0934*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a06                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0087*so4_a1+0.0934*so4_a3
+ mapper: su,string =           14 0.0087*so4_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0934*so4_a3
+ mapper; coefficient 0.0934 =   9.3400002E-02
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = so4_a07->0.0000*so4_a2+0.0002*so4_a1+0.4020*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a07                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0002*so4_a1+0.4020*so4_a3
+ mapper: su,string =           14 0.0002*so4_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =           38          50
+ mapper: string  = 0.4020*so4_a3
+ mapper; coefficient 0.4020 =   0.4020000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = so4_a08->0.0000*so4_a2+0.0000*so4_a1+0.4983*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ so4_a08                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.4983*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.4983*so4_a3
+ mapper; coefficient 0.4983 =   0.4983000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a01->0.1410*so4_a2+0.0033*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a01                         
+ mapper: send =           50
+ mapper: su,string =           14 0.1410*so4_a2
+ mapper; coefficient 0.1410 =   0.1410000    
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0033*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0033*so4_a1
+ mapper; coefficient 0.0033 =   3.3000000E-03
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a02->0.0446*so4_a2+0.0017*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a02                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0446*so4_a2
+ mapper; coefficient 0.0446 =   4.4599999E-02
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0017*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0017*so4_a1
+ mapper; coefficient 0.0017 =   1.7000000E-03
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a03->0.0021*so4_a2+0.0210*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a03                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0021*so4_a2
+ mapper; coefficient 0.0021 =   2.0999999E-03
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0210*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0210*so4_a1
+ mapper; coefficient 0.0210 =   2.1000000E-02
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a04->0.0000*so4_a2+0.0720*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a04                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0720*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0720*so4_a1
+ mapper; coefficient 0.0720 =   7.1999997E-02
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a05->0.0000*so4_a2+0.0202*so4_a1+0.0011*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a05                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0202*so4_a1+0.0011*so4_a3
+ mapper: su,string =           14 0.0202*so4_a1
+ mapper; coefficient 0.0202 =   2.0199999E-02
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0011*so4_a3
+ mapper; coefficient 0.0011 =   1.1000000E-03
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a06->0.0000*so4_a2+0.0001*so4_a1+0.0175*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a06                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0001*so4_a1+0.0175*so4_a3
+ mapper: su,string =           14 0.0001*so4_a1
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0175*so4_a3
+ mapper; coefficient 0.0175 =   1.7500000E-02
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a07->0.0000*so4_a2+0.0000*so4_a1+0.0755*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a07                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0755*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0755*so4_a3
+ mapper; coefficient 0.0755 =   7.5499997E-02
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = nh4_a08->0.0000*so4_a2+0.0000*so4_a1+0.0935*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ nh4_a08                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0935*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0935*so4_a3
+ mapper; coefficient 0.0935 =   9.3500003E-02
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a01->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a01                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a02->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a02                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a03->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a03                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a04->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a04                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a05->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a05                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a06->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a06                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a07->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a07                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = no3_a08->0.0000*so4_a2+0.0000*so4_a1+0.0000*so4_a3;1.e9
+ mapper: there are            3  mozart species for 
+ no3_a08                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*so4_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*so4_a1+0.0000*so4_a3
+ mapper: su,string =           14 0.0000*so4_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*so4_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = na_a01->0.2954*ncl_a2+0.0037*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a01                          
+ mapper: send =           49
+ mapper: su,string =           14 0.2954*ncl_a2
+ mapper; coefficient 0.2954 =   0.2954000    
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0037*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.0037*ncl_a1
+ mapper; coefficient 0.0037 =   3.7000000E-03
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = na_a02->0.0935*ncl_a2+0.0442*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a02                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0935*ncl_a2
+ mapper; coefficient 0.0935 =   9.3500003E-02
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0442*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.0442*ncl_a1
+ mapper; coefficient 0.0442 =   4.4199999E-02
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = na_a03->0.0045*ncl_a2+0.1509*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a03                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0045*ncl_a2
+ mapper; coefficient 0.0045 =   4.4999998E-03
+ mapper: sl,send =           23          49
+ mapper: string  = 0.1509*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.1509*ncl_a1
+ mapper; coefficient 0.1509 =   0.1509000    
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = na_a04->0.0000*ncl_a2+0.1488*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a04                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.1488*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.1488*ncl_a1
+ mapper; coefficient 0.1488 =   0.1488000    
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = na_a05->0.0000*ncl_a2+0.0424*ncl_a1+0.0024*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a05                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0424*ncl_a1+0.0024*ncl_a3
+ mapper: su,string =           14 0.0424*ncl_a1
+ mapper; coefficient 0.0424 =   4.2399999E-02
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0024*ncl_a3
+ mapper; coefficient 0.0024 =   2.4000001E-03
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = na_a06->0.0000*ncl_a2+0.0034*ncl_a1+0.0367*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a06                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0034*ncl_a1+0.0367*ncl_a3
+ mapper: su,string =           14 0.0034*ncl_a1
+ mapper; coefficient 0.0034 =   3.4000000E-03
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0367*ncl_a3
+ mapper; coefficient 0.0367 =   3.6699999E-02
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = na_a07->0.0000*ncl_a2+0.0000*ncl_a1+0.1582*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a07                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0000*ncl_a1+0.1582*ncl_a3
+ mapper: su,string =           14 0.0000*ncl_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           37          49
+ mapper: string  = 0.1582*ncl_a3
+ mapper; coefficient 0.1582 =   0.1582000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = na_a08->0.0000*ncl_a2+0.0000*ncl_a1+0.1960*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ na_a08                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0000*ncl_a1+0.1960*ncl_a3
+ mapper: su,string =           14 0.0000*ncl_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           37          49
+ mapper: string  = 0.1960*ncl_a3
+ mapper; coefficient 0.1960 =   0.1960000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a01->0.4555*ncl_a2+0.0056*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a01                          
+ mapper: send =           49
+ mapper: su,string =           14 0.4555*ncl_a2
+ mapper; coefficient 0.4555 =   0.4555000    
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0056*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.0056*ncl_a1
+ mapper; coefficient 0.0056 =   5.5999998E-03
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a02->0.1441*ncl_a2+0.0681*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a02                          
+ mapper: send =           49
+ mapper: su,string =           14 0.1441*ncl_a2
+ mapper; coefficient 0.1441 =   0.1441000    
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0681*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.0681*ncl_a1
+ mapper; coefficient 0.0681 =   6.8099998E-02
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a03->0.0068*ncl_a2+0.2326*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a03                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0068*ncl_a2
+ mapper; coefficient 0.0068 =   6.8000001E-03
+ mapper: sl,send =           23          49
+ mapper: string  = 0.2326*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.2326*ncl_a1
+ mapper; coefficient 0.2326 =   0.2326000    
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a04->0.0000*ncl_a2+0.2295*ncl_a1+0.0000*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a04                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.2295*ncl_a1+0.0000*ncl_a3
+ mapper: su,string =           14 0.2295*ncl_a1
+ mapper; coefficient 0.2295 =   0.2295000    
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0000*ncl_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a05->0.0000*ncl_a2+0.0654*ncl_a1+0.0037*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a05                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0654*ncl_a1+0.0037*ncl_a3
+ mapper: su,string =           14 0.0654*ncl_a1
+ mapper; coefficient 0.0654 =   6.5399997E-02
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0037*ncl_a3
+ mapper; coefficient 0.0037 =   3.7000000E-03
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a06->0.0000*ncl_a2+0.0055*ncl_a1+0.0567*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a06                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0055*ncl_a1+0.0567*ncl_a3
+ mapper: su,string =           14 0.0055*ncl_a1
+ mapper; coefficient 0.0055 =   5.5000000E-03
+ mapper: sl,send =           37          49
+ mapper: string  = 0.0567*ncl_a3
+ mapper; coefficient 0.0567 =   5.6699999E-02
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a07->0.0000*ncl_a2+0.0001*ncl_a1+0.2439*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a07                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0001*ncl_a1+0.2439*ncl_a3
+ mapper: su,string =           14 0.0001*ncl_a1
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =           37          49
+ mapper: string  = 0.2439*ncl_a3
+ mapper; coefficient 0.2439 =   0.2439000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = cl_a08->0.0000*ncl_a2+0.0000*ncl_a1+0.3023*ncl_a3;1.e9
+ mapper: there are            3  mozart species for 
+ cl_a08                          
+ mapper: send =           49
+ mapper: su,string =           14 0.0000*ncl_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           23          49
+ mapper: string  = 0.0000*ncl_a1+0.3023*ncl_a3
+ mapper: su,string =           14 0.0000*ncl_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           37          49
+ mapper: string  = 0.3023*ncl_a3
+ mapper; coefficient 0.3023 =   0.3023000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                         =   1.0000000E+09
+ mapper: mstring = oin_a01->0.7510*dst_a2+0.0093*dst_a1+0.0000*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a01                         
+ mapper: send =           50
+ mapper: su,string =           14 0.7510*dst_a2
+ mapper; coefficient 0.7510 =   0.7510000    
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0093*dst_a1+0.0000*dst_a3
+ mapper: su,string =           14 0.0093*dst_a1
+ mapper; coefficient 0.0093 =   9.3000000E-03
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*dst_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = oin_a02->0.2376*dst_a2+0.1123*dst_a1+0.0000*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a02                         
+ mapper: send =           50
+ mapper: su,string =           14 0.2376*dst_a2
+ mapper; coefficient 0.2376 =   0.2376000    
+ mapper: sl,send =           24          50
+ mapper: string  = 0.1123*dst_a1+0.0000*dst_a3
+ mapper: su,string =           14 0.1123*dst_a1
+ mapper; coefficient 0.1123 =   0.1123000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*dst_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = oin_a03->0.0113*dst_a2+0.3835*dst_a1+0.0000*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a03                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0113*dst_a2
+ mapper; coefficient 0.0113 =   1.1300000E-02
+ mapper: sl,send =           24          50
+ mapper: string  = 0.3835*dst_a1+0.0000*dst_a3
+ mapper: su,string =           14 0.3835*dst_a1
+ mapper; coefficient 0.3835 =   0.3835000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*dst_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = oin_a04->0.0001*dst_a2+0.3783*dst_a1+0.0002*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a04                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0001*dst_a2
+ mapper; coefficient 0.0001 =   9.9999997E-05
+ mapper: sl,send =           24          50
+ mapper: string  = 0.3783*dst_a1+0.0002*dst_a3
+ mapper: su,string =           14 0.3783*dst_a1
+ mapper; coefficient 0.3783 =   0.3783000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0002*dst_a3
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = oin_a05->0.0000*dst_a2+0.1077*dst_a1+0.0061*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a05                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*dst_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.1077*dst_a1+0.0061*dst_a3
+ mapper: su,string =           14 0.1077*dst_a1
+ mapper; coefficient 0.1077 =   0.1077000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0061*dst_a3
+ mapper; coefficient 0.0061 =   6.0999999E-03
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = oin_a06->0.0000*dst_a2+0.0087*dst_a1+0.0934*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a06                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*dst_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0087*dst_a1+0.0934*dst_a3
+ mapper: su,string =           14 0.0087*dst_a1
+ mapper; coefficient 0.0087 =   8.7000001E-03
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0934*dst_a3
+ mapper; coefficient 0.0934 =   9.3400002E-02
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = oin_a07->0.0000*dst_a2+0.0002*dst_a1+0.4020*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a07                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*dst_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0002*dst_a1+0.4020*dst_a3
+ mapper: su,string =           14 0.0002*dst_a1
+ mapper; coefficient 0.0002 =   1.9999999E-04
+ mapper: sl,send =           38          50
+ mapper: string  = 0.4020*dst_a3
+ mapper; coefficient 0.4020 =   0.4020000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = oin_a08->0.0000*dst_a2+0.0000*dst_a1+0.4983*dst_a3;1.e9
+ mapper: there are            3  mozart species for 
+ oin_a08                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*dst_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*dst_a1+0.4983*dst_a3
+ mapper: su,string =           14 0.0000*dst_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.4983*dst_a3
+ mapper; coefficient 0.4983 =   0.4983000    
+ mapper; wrf_wght 
+ 1.e9                                                                           
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =   1.0000000E+09
+ mapper: mstring = num_a01->0.9502*num_a2+0.2509*num_a1+0.0000*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a01                         
+ mapper: send =           50
+ mapper: su,string =           14 0.9502*num_a2
+ mapper; coefficient 0.9502 =   0.9502000    
+ mapper: sl,send =           24          50
+ mapper: string  = 0.2509*num_a1+0.0000*num_a3
+ mapper: su,string =           14 0.2509*num_a1
+ mapper; coefficient 0.2509 =   0.2509000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*num_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper: mstring = num_a02->0.0494*num_a2+0.4626*num_a1+0.0000*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a02                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0494*num_a2
+ mapper; coefficient 0.0494 =   4.9400002E-02
+ mapper: sl,send =           24          50
+ mapper: string  = 0.4626*num_a1+0.0000*num_a3
+ mapper: su,string =           14 0.4626*num_a1
+ mapper; coefficient 0.4626 =   0.4626000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0000*num_a3
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper: mstring = num_a03->0.0004*num_a2+0.2470*num_a1+0.0007*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a03                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0004*num_a2
+ mapper; coefficient 0.0004 =   3.9999999E-04
+ mapper: sl,send =           24          50
+ mapper: string  = 0.2470*num_a1+0.0007*num_a3
+ mapper: su,string =           14 0.2470*num_a1
+ mapper; coefficient 0.2470 =   0.2470000    
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0007*num_a3
+ mapper; coefficient 0.0007 =   6.9999998E-04
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper: mstring = num_a04->0.0000*num_a2+0.0377*num_a1+0.0232*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a04                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*num_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0377*num_a1+0.0232*num_a3
+ mapper: su,string =           14 0.0377*num_a1
+ mapper; coefficient 0.0377 =   3.7700001E-02
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0232*num_a3
+ mapper; coefficient 0.0232 =   2.3200000E-02
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper: mstring = num_a05->0.0000*num_a2+0.0016*num_a1+0.1886*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a05                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*num_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0016*num_a1+0.1886*num_a3
+ mapper: su,string =           14 0.0016*num_a1
+ mapper; coefficient 0.0016 =   1.6000000E-03
+ mapper: sl,send =           38          50
+ mapper: string  = 0.1886*num_a3
+ mapper; coefficient 0.1886 =   0.1886000    
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper: mstring = num_a06->0.0000*num_a2+0.0000*num_a1+0.4372*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a06                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*num_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*num_a1+0.4372*num_a3
+ mapper: su,string =           14 0.0000*num_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.4372*num_a3
+ mapper; coefficient 0.4372 =   0.4372000    
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper: mstring = num_a07->0.0000*num_a2+0.0000*num_a1+0.2935*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a07                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*num_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*num_a1+0.2935*num_a3
+ mapper: su,string =           14 0.0000*num_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.2935*num_a3
+ mapper; coefficient 0.2935 =   0.2935000    
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper: mstring = num_a08->0.0000*num_a2+0.0000*num_a1+0.0566*num_a3;1.0
+ mapper: there are            3  mozart species for 
+ num_a08                         
+ mapper: send =           50
+ mapper: su,string =           14 0.0000*num_a2
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           24          50
+ mapper: string  = 0.0000*num_a1+0.0566*num_a3
+ mapper: su,string =           14 0.0000*num_a1
+ mapper; coefficient 0.0000 =   0.0000000E+00
+ mapper: sl,send =           38          50
+ mapper: string  = 0.0566*num_a3
+ mapper; coefficient 0.0566 =   5.6600001E-02
+ mapper; wrf_wght 
+ 1.0                                                                            
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                        =    1.000000    
+ mapper:            1 co           1 CO         1.000000     T   1000000.    
+ mapper:            2 acet           1 CH3COCH3   1.000000     T   1000000.    
+ mapper:            3 alk3           1 BIGALK    0.5000000     T   1000000.    
+ mapper:            4 alk4           1 BIGALK    0.3000000     T   1000000.    
+ mapper:            5 alk5           1 BIGALK    0.2000000     T   1000000.    
+ mapper:            6 aro1           1 TOLUENE   0.5000000     T   1000000.    
+ mapper:            7 aro2           1 TOLUENE   0.5000000     T   1000000.    
+ mapper:            8 c2h2           1 C2H2       1.000000     T   1000000.    
+ mapper:            9 c2h6           1 C2H6       1.000000     T   1000000.    
+ mapper:           10 c3h6           1 C3H6       1.000000     T   1000000.    
+ mapper:           11 c3h8           1 C3H8       1.000000     T   1000000.    
+ mapper:           12 cco_oh           1 CH3COOH    1.000000     T
+   1000000.    
+ mapper:           13 cooh           1 CH3OOH     1.000000     T   1000000.    
+ mapper:           14 ch4           1 CH4        1.000000     T   1000000.    
+ mapper:           15 ccho           1 CH3CHO     1.000000     T   1000000.    
+ mapper:           16 cres           1 CRESOL     1.000000     T   1000000.    
+ mapper:           17 ethene           1 C2H4       1.000000     T
+   1000000.    
+ mapper:           18 etoh           1 C2H5OH     1.000000     T   1000000.    
+ mapper:           19 gly           1 GLYOXAL    1.000000     T   1000000.    
+ mapper:           20 h2o2           1 H2O2       1.000000     T   1000000.    
+ mapper:           21 n2o5           1 N2O5       1.000000     T   1000000.    
+ mapper:           22 hcho           1 CH2O       1.000000     T   1000000.    
+ mapper:           23 hcooh           1 HCOOH      1.000000     T   1000000.    
+ mapper:           24 hno3           1 HNO3       1.000000     T   1000000.    
+ mapper:           25 isoprod           2 MVK     MACR       1.000000    
+   1.000000     T T   1000000.    
+ mapper:           26 isoprene           1 ISOP       1.000000     T
+   1000000.    
+ mapper:           27 mek           1 MEK        1.000000     T   1000000.    
+ mapper:           28 meoh           1 CH3OH      1.000000     T   1000000.    
+ mapper:           29 methacro           1 MACR       1.000000     T
+   1000000.    
+ mapper:           30 mvk           1 MVK        1.000000     T   1000000.    
+ mapper:           31 mgly           1 CH3COCHO   1.000000     T   1000000.    
+ mapper:           32 nh3           1 NH3        1.000000     T   1000000.    
+ mapper:           33 no           1 NO         1.000000     T   1000000.    
+ mapper:           34 no2           1 NO2        1.000000     T   1000000.    
+ mapper:           35 o3           1 O3         1.000000     T   1000000.    
+ mapper:           36 ole1           1 C3H6       1.000000     T   1000000.    
+ mapper:           37 ole2           1 BIGENE     1.000000     T   1000000.    
+ mapper:           38 pan           1 PAN        1.000000     T   1000000.    
+ mapper:           39 so2           1 SO2        1.000000     T   1000000.    
+ mapper:           40 terp           1 MTERP      1.000000     T   1000000.    
+ mapper:           41 oc_a01          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   9.3000000E-03
+  9.3000000E-03  0.7510000      9.3000000E-03  0.7510000      9.3000000E-03
+  0.7510000      9.3000000E-03  0.7510000      9.3000000E-03  0.7510000    
+  9.3000000E-03 T T T T T T T T T T T T  5.0000000E+08
+ mapper:           42 oc_a02          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   0.1123000    
+  0.1123000      0.2376000      0.1123000      0.2376000      0.1123000    
+  0.2376000      0.1123000      0.2376000      0.1123000      0.2376000    
+  0.1123000     T T T T T T T T T T T T  5.0000000E+08
+ mapper:           43 oc_a03          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   0.3835000    
+  0.3835000      1.1300000E-02  0.3835000      1.3300000E-02  0.3835000    
+  1.1300000E-02  0.3838000      1.1300000E-02  0.3838000      1.1300000E-02
+  0.3838000     T T T T T T T T T T T T  5.0000000E+08
+ mapper:           44 oc_a04          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   0.3783000    
+  0.3783000      9.9999997E-05  0.3783000      9.9999997E-05  0.3783000    
+  9.9999997E-05  0.3783000      9.9999997E-05  0.3783000      9.9999997E-05
+  0.3783000     T T T T T T T T T T T T  5.0000000E+08
+ mapper:           45 oc_a05          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   0.1077000    
+  0.1077000      0.0000000E+00  0.1077000      0.0000000E+00  0.1077000    
+  0.0000000E+00  0.1077000      0.0000000E+00  0.1077000      0.0000000E+00
+  0.1077000     T T T T T T T T T T T T  5.0000000E+08
+ mapper:           46 oc_a06          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   8.7000001E-03
+  8.7000001E-03  0.0000000E+00  8.7000001E-03  0.0000000E+00  8.7000001E-03
+  0.0000000E+00  8.7000001E-03  0.0000000E+00  8.7000001E-03  0.0000000E+00
+  8.7000001E-03 T T T T T T T T T T T T  5.0000000E+08
+ mapper:           47 oc_a07          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   1.9999999E-04
+  1.9999999E-04  0.0000000E+00  1.9999999E-04  0.0000000E+00  1.9999999E-04
+  0.0000000E+00  1.9999999E-04  0.0000000E+00  1.9999999E-04  0.0000000E+00
+  1.9999999E-04 T T T T T T T T T T T T  5.0000000E+08
+ mapper:           48 oc_a08          12 pom_a1  pom_a4  soa1_a2 soa1_a1 
+ soa2_a2 soa2_a1 soa3_a2 soa3_a1 soa4_a2 soa4_a1 soa5_a2 soa5_a1   0.0000000E+00
+  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00
+  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00
+  0.0000000E+00 T T T T T T T T T T T T  5.0000000E+08
+ mapper:           49 bc_a01           2 bc_a1   bc_a4     9.3000000E-03
+  9.3000000E-03 T T  1.0000000E+09
+ mapper:           50 bc_a02           2 bc_a1   bc_a4     0.1123000    
+  0.1123000     T T  1.0000000E+09
+ mapper:           51 bc_a03           2 bc_a1   bc_a4     0.3835000    
+  0.3835000     T T  1.0000000E+09
+ mapper:           52 bc_a04           2 bc_a1   bc_a4     0.3783000    
+  0.3783000     T T  1.0000000E+09
+ mapper:           53 bc_a05           2 bc_a1   bc_a4     0.1077000    
+  0.1077000     T T  1.0000000E+09
+ mapper:           54 bc_a06           2 bc_a1   bc_a4     8.7000001E-03
+  8.7000001E-03 T T  1.0000000E+09
+ mapper:           55 bc_a07           2 bc_a1   bc_a4     1.9999999E-04
+  1.9999999E-04 T T  1.0000000E+09
+ mapper:           56 bc_a08           2 bc_a1   bc_a4     0.0000000E+00
+  0.0000000E+00 T T  1.0000000E+09
+ mapper:           57 so4_a01           3 so4_a2  so4_a1  so4_a3  
+  0.7510000      9.3000000E-03  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           58 so4_a02           3 so4_a2  so4_a1  so4_a3  
+  0.2376000      0.1123000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:           59 so4_a03           3 so4_a2  so4_a1  so4_a3  
+  1.1300000E-02  0.3835000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:           60 so4_a04           3 so4_a2  so4_a1  so4_a3  
+  9.9999997E-05  0.3783000      1.9999999E-04 T T T  1.0000000E+09
+ mapper:           61 so4_a05           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.1077000      6.0999999E-03 T T T  1.0000000E+09
+ mapper:           62 so4_a06           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  8.7000001E-03  9.3400002E-02 T T T  1.0000000E+09
+ mapper:           63 so4_a07           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  1.9999999E-04  0.4020000     T T T  1.0000000E+09
+ mapper:           64 so4_a08           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.4983000     T T T  1.0000000E+09
+ mapper:           65 nh4_a01           3 so4_a2  so4_a1  so4_a3  
+  0.1410000      3.3000000E-03  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           66 nh4_a02           3 so4_a2  so4_a1  so4_a3  
+  4.4599999E-02  1.7000000E-03  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           67 nh4_a03           3 so4_a2  so4_a1  so4_a3  
+  2.0999999E-03  2.1000000E-02  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           68 nh4_a04           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  7.1999997E-02  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           69 nh4_a05           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  2.0199999E-02  1.1000000E-03 T T T  1.0000000E+09
+ mapper:           70 nh4_a06           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  9.9999997E-05  1.7500000E-02 T T T  1.0000000E+09
+ mapper:           71 nh4_a07           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  7.5499997E-02 T T T  1.0000000E+09
+ mapper:           72 nh4_a08           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  9.3500003E-02 T T T  1.0000000E+09
+ mapper:           73 no3_a01           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           74 no3_a02           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           75 no3_a03           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           76 no3_a04           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           77 no3_a05           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           78 no3_a06           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           79 no3_a07           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           80 no3_a08           3 so4_a2  so4_a1  so4_a3  
+  0.0000000E+00  0.0000000E+00  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           81 na_a01           3 ncl_a2  ncl_a1  ncl_a3    0.2954000    
+  3.7000000E-03  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           82 na_a02           3 ncl_a2  ncl_a1  ncl_a3    9.3500003E-02
+  4.4199999E-02  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           83 na_a03           3 ncl_a2  ncl_a1  ncl_a3    4.4999998E-03
+  0.1509000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:           84 na_a04           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  0.1488000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:           85 na_a05           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  4.2399999E-02  2.4000001E-03 T T T  1.0000000E+09
+ mapper:           86 na_a06           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  3.4000000E-03  3.6699999E-02 T T T  1.0000000E+09
+ mapper:           87 na_a07           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  0.0000000E+00  0.1582000     T T T  1.0000000E+09
+ mapper:           88 na_a08           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  0.0000000E+00  0.1960000     T T T  1.0000000E+09
+ mapper:           89 cl_a01           3 ncl_a2  ncl_a1  ncl_a3    0.4555000    
+  5.5999998E-03  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           90 cl_a02           3 ncl_a2  ncl_a1  ncl_a3    0.1441000    
+  6.8099998E-02  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           91 cl_a03           3 ncl_a2  ncl_a1  ncl_a3    6.8000001E-03
+  0.2326000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:           92 cl_a04           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  0.2295000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:           93 cl_a05           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  6.5399997E-02  3.7000000E-03 T T T  1.0000000E+09
+ mapper:           94 cl_a06           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  5.5000000E-03  5.6699999E-02 T T T  1.0000000E+09
+ mapper:           95 cl_a07           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  9.9999997E-05  0.2439000     T T T  1.0000000E+09
+ mapper:           96 cl_a08           3 ncl_a2  ncl_a1  ncl_a3    0.0000000E+00
+  0.0000000E+00  0.3023000     T T T  1.0000000E+09
+ mapper:           97 oin_a01           3 dst_a2  dst_a1  dst_a3  
+  0.7510000      9.3000000E-03  0.0000000E+00 T T T  1.0000000E+09
+ mapper:           98 oin_a02           3 dst_a2  dst_a1  dst_a3  
+  0.2376000      0.1123000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:           99 oin_a03           3 dst_a2  dst_a1  dst_a3  
+  1.1300000E-02  0.3835000      0.0000000E+00 T T T  1.0000000E+09
+ mapper:          100 oin_a04           3 dst_a2  dst_a1  dst_a3  
+  9.9999997E-05  0.3783000      1.9999999E-04 T T T  1.0000000E+09
+ mapper:          101 oin_a05           3 dst_a2  dst_a1  dst_a3  
+  0.0000000E+00  0.1077000      6.0999999E-03 T T T  1.0000000E+09
+ mapper:          102 oin_a06           3 dst_a2  dst_a1  dst_a3  
+  0.0000000E+00  8.7000001E-03  9.3400002E-02 T T T  1.0000000E+09
+ mapper:          103 oin_a07           3 dst_a2  dst_a1  dst_a3  
+  0.0000000E+00  1.9999999E-04  0.4020000     T T T  1.0000000E+09
+ mapper:          104 oin_a08           3 dst_a2  dst_a1  dst_a3  
+  0.0000000E+00  0.0000000E+00  0.4983000     T T T  1.0000000E+09
+ mapper:          105 num_a01           3 num_a2  num_a1  num_a3  
+  0.9502000      0.2509000      0.0000000E+00 T T T   1.000000    
+ mapper:          106 num_a02           3 num_a2  num_a1  num_a3  
+  4.9400002E-02  0.4626000      0.0000000E+00 T T T   1.000000    
+ mapper:          107 num_a03           3 num_a2  num_a1  num_a3  
+  3.9999999E-04  0.2470000      6.9999998E-04 T T T   1.000000    
+ mapper:          108 num_a04           3 num_a2  num_a1  num_a3  
+  0.0000000E+00  3.7700001E-02  2.3200000E-02 T T T   1.000000    
+ mapper:          109 num_a05           3 num_a2  num_a1  num_a3  
+  0.0000000E+00  1.6000000E-03  0.1886000     T T T   1.000000    
+ mapper:          110 num_a06           3 num_a2  num_a1  num_a3  
+  0.0000000E+00  0.0000000E+00  0.4372000     T T T   1.000000    
+ mapper:          111 num_a07           3 num_a2  num_a1  num_a3  
+  0.0000000E+00  0.0000000E+00  0.2935000     T T T   1.000000    
+ mapper:          112 num_a08           3 num_a2  num_a1  num_a3  
+  0.0000000E+00  0.0000000E+00  5.6600001E-02 T T T   1.000000    
+ main: nspec =          112
+ Opened /pierce-scratch/kbilsbac/wrf_chem/WRF_GoAmazon_mpi/run/wrfinput_d01
+  
+ wrf times in 
+ /pierce-scratch/kbilsbac/wrf_chem/WRF_GoAmazon_mpi/run/wrfinput_d01
+           1    20140310           0
+ Opened /pierce-scratch/kbilsbac/wrf_chem/WRF_GoAmazon_mpi/run/wrfbdy_d01
+ read_wrf_times: delta_secs =        21600
+  
+ wrf times in /pierce-scratch/kbilsbac/wrf_chem/WRF_GoAmazon_mpi/run/wrfbdy_d01
+           1    20140310           0
+           2    20140310       21600
+           3    20140310       43200
+           4    20140310       64800
+           5    20140311           0
+           6    20140311       21600
+           7    20140311       43200
+           8    20140311       64800
+           9    20140312           0
+          10    20140312       21600
+          11    20140312       43200
+          12    20140312       64800
+          13    20140313           0
+          14    20140313       21600
+          15    20140313       43200
+          16    20140313       64800
+          17    20140314           0
+          18    20140314       21600
+          19    20140314       43200
+          20    20140314       64800
+          21    20140315           0
+          22    20140315       21600
+          23    20140315       43200
+          24    20140315       64800
+          25    20140316           0
+          26    20140316       21600
+          27    20140316       43200
+          28    20140316       64800
+          29    20140317           0
+          30    20140317       21600
+          31    20140317       43200
+          32    20140317       64800
+          33    20140318           0
+          34    20140318       21600
+          35    20140318       43200
+          36    20140318       64800
+          37    20140319           0
+ init_wrfchem: MAP_PROJ = MERCATOR
+ init_wrfchem: CEN_LON =   -59.99100    
+ init_wrfchem: CEN_LAT =   -3.149010    
+ init_wrfchem: STAND_LON =   -59.99100    
+ init_wrfchem: TRUELAT1 =   -3.149000    
+ init_wrfchem: TRUELAT2 =   0.0000000E+00
+ init_wrfchem: DX =    10000.00    
+ finished init_wrfchem_lib
+ main_bc_wrfchem: read p_top
+ main_bc_wrfchem: read eta values on half (mass) levels
+ main_bc_wrfchem: read wrf longitues and latitudes
+ init_mozart_lib: opened 
+ /pierce-scratch/kbilsbac/wrf_chem/WRF_GoAmazon_mpi/run/camchem-2021042617094819
+ 3780.nc
+ checking wrf variable co
+ len CO =            2
+ checking wrf variable acet
+ len CH3COCH3 =            8
+ checking wrf variable alk3
+ len BIGALK =            6
+ checking wrf variable alk4
+ len BIGALK =            6
+ checking wrf variable alk5
+ len BIGALK =            6
+ checking wrf variable aro1
+ len TOLUENE =            7
+ checking wrf variable aro2
+ len TOLUENE =            7
+ checking wrf variable c2h2
+ len C2H2 =            4
+ checking wrf variable c2h6
+ len C2H6 =            4
+ checking wrf variable c3h6
+ len C3H6 =            4
+ checking wrf variable c3h8
+ len C3H8 =            4
+ checking wrf variable cco_oh
+ len CH3COOH =            7
+ checking wrf variable cooh
+ len CH3OOH =            6
+ checking wrf variable ch4
+ len CH4 =            3
+ checking wrf variable ccho
+ len CH3CHO =            6
+ checking wrf variable cres
+ len CRESOL =            6
+ checking wrf variable ethene
+ len C2H4 =            4
+ checking wrf variable etoh
+ len C2H5OH =            6
+ checking wrf variable gly
+ len GLYOXAL =            7
+ checking wrf variable h2o2
+ len H2O2 =            4
+ checking wrf variable n2o5
+ len N2O5 =            4
+ checking wrf variable hcho
+ len CH2O =            4
+ checking wrf variable hcooh
+ len HCOOH =            5
+ checking wrf variable hno3
+ len HNO3 =            4
+ checking wrf variable isoprod
+ len MVK =            3
+ len MACR =            4
+ checking wrf variable isoprene
+ len ISOP =            4
+ checking wrf variable mek
+ len MEK =            3
+ checking wrf variable meoh
+ len CH3OH =            5
+ checking wrf variable methacro
+ len MACR =            4
+ checking wrf variable mvk
+ len MVK =            3
+ checking wrf variable mgly
+ len CH3COCHO =            8
+ checking wrf variable nh3
+ len NH3 =            3
+ checking wrf variable no
+ len NO =            2
+ checking wrf variable no2
+ len NO2 =            3
+ checking wrf variable o3
+ len O3 =            2
+ checking wrf variable ole1
+ len C3H6 =            4
+ checking wrf variable ole2
+ len BIGENE =            6
+ checking wrf variable pan
+ len PAN =            3
+ checking wrf variable so2
+ len SO2 =            3
+ checking wrf variable terp
+ len MTERP =            5
+ checking wrf variable oc_a01
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable oc_a02
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable oc_a03
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable oc_a04
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable oc_a05
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable oc_a06
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable oc_a07
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable oc_a08
+ len pom_a1 =            6
+ len pom_a4 =            6
+ len soa1_a2 =            7
+ len soa1_a1 =            7
+ len soa2_a2 =            7
+ len soa2_a1 =            7
+ len soa3_a2 =            7
+ len soa3_a1 =            7
+ len soa4_a2 =            7
+ len soa4_a1 =            7
+ len soa5_a2 =            7
+ len soa5_a1 =            7
+ checking wrf variable bc_a01
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable bc_a02
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable bc_a03
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable bc_a04
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable bc_a05
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable bc_a06
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable bc_a07
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable bc_a08
+ len bc_a1 =            5
+ len bc_a4 =            5
+ checking wrf variable so4_a01
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable so4_a02
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable so4_a03
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable so4_a04
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable so4_a05
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable so4_a06
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable so4_a07
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable so4_a08
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a01
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a02
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a03
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a04
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a05
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a06
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a07
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable nh4_a08
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a01
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a02
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a03
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a04
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a05
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a06
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a07
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable no3_a08
+ len so4_a2 =            6
+ len so4_a1 =            6
+ len so4_a3 =            6
+ checking wrf variable na_a01
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable na_a02
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable na_a03
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable na_a04
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable na_a05
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable na_a06
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable na_a07
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable na_a08
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a01
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a02
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a03
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a04
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a05
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a06
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a07
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable cl_a08
+ len ncl_a2 =            6
+ len ncl_a1 =            6
+ len ncl_a3 =            6
+ checking wrf variable oin_a01
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable oin_a02
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable oin_a03
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable oin_a04
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable oin_a05
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable oin_a06
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable oin_a07
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable oin_a08
+ len dst_a2 =            6
+ len dst_a1 =            6
+ len dst_a3 =            6
+ checking wrf variable num_a01
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ checking wrf variable num_a02
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ checking wrf variable num_a03
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ checking wrf variable num_a04
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ checking wrf variable num_a05
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ checking wrf variable num_a06
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ checking wrf variable num_a07
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ checking wrf variable num_a08
+ len num_a2 =            6
+ len num_a1 =            6
+ len num_a3 =            6
+ finished init_mozart_lib
+ dt_wrfbdy =    21600.00    
+ main; doing time     20140310  :            0
+  
+ get_moz_time_ndx; moz_dir,moz_fn = 
+ /pierce-scratch/kbilsbac/wrf_chem/WRF_GoAmazon_mpi/run/
+ camchem-20210426170948193780.nc
+ get_moz_time_ndx; wrf_date,wrf_datesec,ntime_m =     20140310           0
+           1
+  
+ next_flnm; trying to increment file camchem-20210426170948193780.nc
+ next_flnm; il, iu =            9          28
+ next_filenm: failed to read 20210426170948193780 ; error =           64

@@ -1,0 +1,103 @@
+#include atoms_red
+#include saprc99_mosaic_4bin_iepox_vbs_aq.spc
+#include saprc99_mosaic_4bin_iepox_vbs_aq.eqn
+
+
+
+#INLINE F90_RATES
+
+!__________________________________________________
+
+    REAL(KIND=dp) FUNCTION Keff ( A0,B0,C0, TEMP,X1,X2,y1,y2 )
+    REAL(KIND=dp),INTENT(IN) :: X1,X2,y1,y2
+    REAL(KIND=dp),INTENT(IN) :: TEMP
+    REAL(KIND=dp),INTENT(IN):: A0,B0,C0
+    Keff = A0 * EXP(- B0 /TEMP ) &
+      *(TEMP/300._dp)**C0*(y1*X1/(X1 + X2 + 1.0e-35) &
+       +y2*(1-X1/(X1 + X2 + 1.0e-35)))
+    END FUNCTION Keff
+!__________________________________________________
+
+
+!__________________________________________________
+
+    REAL(KIND=dp) FUNCTION Keff2 ( C0,X1,X2,y1,y2 )
+    REAL(KIND=dp),INTENT(IN) :: X1,X2,y1,y2
+    REAL(KIND=dp),INTENT(IN):: C0
+    Keff2 = C0*(y1*X1/(X1 + X2 + 1.0e-35) &
+       +y2*(1-X1/(X1 + X2 + 1.0e-35 )))
+    END FUNCTION Keff2
+!__________________________________________________
+
+
+!__________________________________________________
+
+    REAL(KIND=dp) FUNCTION Keff3 ( A0,B0,C0, TEMP,y2 )
+    REAL(KIND=dp),INTENT(IN) :: y2
+    REAL(KIND=dp),INTENT(IN) :: TEMP
+    REAL(KIND=dp),INTENT(IN):: A0,B0,C0
+
+    Keff3 = y2*(A0 * EXP(- B0 /TEMP ) &
+      *(TEMP/300._dp)**C0)
+
+    END FUNCTION Keff3
+!__________________________________________________
+
+!__________________________________________________
+
+    REAL(KIND=dp) FUNCTION Keff4 ( C0,X1,X2 )
+    REAL(KIND=dp),INTENT(IN) :: X1,X2
+    REAL(KIND=dp),INTENT(IN):: C0
+    REAL(KIND=dp) ::fragbound
+
+    fragbound=MIN(X2/(X1 + X2 + 1.0e-35),0.75_dp)
+    Keff4 = C0*MAX(1._dp-fragbound-0.1333_dp*fragbound,0._dp)*1.15 
+   
+    END FUNCTION Keff4
+!__________________________________________________
+
+!__________________________________________________
+
+    REAL(KIND=dp) FUNCTION Keff5 ( C0,X1,X2 )
+    REAL(KIND=dp),INTENT(IN) :: X1,X2
+    REAL(KIND=dp),INTENT(IN):: C0
+    REAL(KIND=dp) ::fragbound
+
+    fragbound=MIN(X2/(X1 + X2 + 1.0e-35),0.75_dp)
+    Keff5 = C0*fragbound
+
+    END FUNCTION Keff5
+!__________________________________________________
+
+    REAL(KIND=dp) FUNCTION Keff6 ( C0,X1,X2 )
+    REAL(KIND=dp),INTENT(IN) :: X1,X2
+    REAL(KIND=dp),INTENT(IN):: C0
+    REAL(KIND=dp) ::fragbound
+
+    fragbound=MIN(X2/(X1 + X2 + 1.0e-35),0.75_dp)
+    Keff6 = C0*fragbound
+
+    END FUNCTION Keff6
+!__________________________________________________
+
+
+     REAL(KIND=dp) FUNCTION usr24( TEMP, C_M )
+
+     REAL(KIND=dp), INTENT(IN) :: TEMP
+     REAL(KIND=dp), INTENT(IN) :: C_M
+
+     REAL(KIND=dp) :: ko, wrk
+
+     wrk   = .21_dp*C_M
+     ko    = 1._dp + 5.5e-31_dp*exp( 7460._dp/TEMP )*wrk
+     usr24 = 1.7e-42_dp*exp( 7810._dp/TEMP )*wrk/ko
+
+     END FUNCTION usr24
+
+
+
+
+#ENDINLINE
+
+
+

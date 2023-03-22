@@ -1,0 +1,72 @@
+#EQUATIONS {SAPRC99_MOSAIC_4BIN_IEPOX_VBS_AQ by Manish Shrivastava}
+
+{1} NO2 + hv = NO + O3P : j(Pj_no2) ;
+{2} O3P + M {O2+air} = O3 : 0.20946e0*C_M*ARR(5.68D-34,0.0_dp,-2.80_dp,TEMP) ;
+{3} O3P + O3 = M {2O2} : ARR(8.00D-12,2060.0_dp,0.0_dp,TEMP) ;
+{4} O3P + NO + M {AIR} = NO2 : ARR(1.00D-31,0.0_dp,-1.60_dp,TEMP) ;
+{5} O3P + NO2 = NO : ARR(6.50D-12,-120.0_dp,0.0_dp,TEMP) ;
+{6} O3P + NO2 = NO3 : FALL(9.00D-32,0.0_dp,-2.00_dp,2.20D-11,0.0_dp,0.0_dp,0.80_dp,TEMP,C_M) ;
+{7} O3 + NO = NO2 : ARR(1.80D-12,1370.0_dp,0.0_dp,TEMP) ;
+{8} O3 + NO2 = NO3 : ARR(1.40D-13,2470.0_dp,0.0_dp,TEMP) ;
+{9} NO + NO3 = NO2 + NO2 : ARR(1.80D-11,-110.0_dp,0.0_dp,TEMP) ;
+{10} NO + NO + M {O2} = NO2 + NO2 : 0.20946e0*ARR(3.30D-39,-530.0_dp,0.0_dp,TEMP) ;
+{11} NO2 + NO3 = N2O5 : FALL(2.80D-30,0.0_dp,-3.50_dp,2.00D-12,0.0_dp,0.20_dp,0.45_dp,TEMP,C_M) ;
+{12} N2O5 = NO2 + NO3 : FALL(1.D-3,11000.0_dp,-3.5_dp,9.7D14,11080.0_dp,0.1_dp,0.45_dp,TEMP,C_M) ;
+{13} N2O5 + H2O = HNO3 + HNO3 : 2.60D-22 ;
+{14} NO2 + NO3 = NO + NO2 : ARR(4.50D-14,1260.0_dp,0.0_dp,TEMP) ;
+{15} NO3 + hv = NO : j(Pj_no3o2) ;
+{16} NO3 + hv = NO2 + O3P : j(Pj_no3o) ;
+{17} O3 + hv = O3P : j(Pj_o33p) ;
+{18} O3 + hv = O1D : j(Pj_o31d) ;
+{19} O1D + H2O = OH + OH : 2.20D-10 ;
+{20} O1D + M {AIR} = O3P : ARR(2.09D-11,-95.0_dp,0.0_dp,TEMP) ;
+{21} OH + NO = HONO : FALL(7.00D-31,0.0_dp,-2.60_dp,3.60D-11,0.0_dp,-0.10_dp,0.60_dp,TEMP,C_M) ;
+{22} HONO + hv = OH + NO : 0.9000_dp*j(Pj_hno2) ;
+{23} HONO + hv = HO2 + NO2 : 0.1000_dp*j(Pj_hno2) ;
+{24} OH + HONO = NO2 : ARR(2.70D-12,-260.0_dp,0.0_dp,TEMP) ;
+{25} OH + NO2 = HNO3 : FALL(2.43D-30, 0.0_dp,-3.10_dp,1.67D-11,0.0_dp,-2.10_dp,0.60_dp,TEMP,C_M) ;
+{26} OH + NO3 = HO2 + NO2 : 2.00D-11 ;
+{27} OH + HNO3 = NO3 : EP2(7.20D-15,-785.0_dp,4.10D-16,-1440.0_dp,1.90D-33,-725.0_dp,TEMP,C_M) ;
+{28} HNO3 + hv = OH + NO2 : j(Pj_hno3) ;
+{29} OH + CO = HO2 : EP3(1.30D-13,0.0_dp,3.19D-33,0.0_dp,TEMP,C_M) ;
+{30} OH + O3 = HO2 : ARR(1.90D-12,1000.0_dp,0.0_dp,TEMP) ;
+{31} HO2 + NO = OH + NO2 : ARR(3.40D-12,-270.0_dp,0.0_dp,TEMP) ;
+{32} HO2 + NO2 = HNO4 : FALL(1.80D-31,0.0_dp,-3.20_dp,4.70D-12,0.0_dp,0.0_dp,0.60_dp,TEMP,C_M) ;
+{33} HNO4 = HO2 + NO2 : FALL(4.10D-05,10650.0_dp,0.0_dp,5.7D15,11170.0_dp,0.0_dp,0.5_dp,TEMP,C_M) ;
+{34} HNO4 + hv = 0.61HO2 + 0.61NO2 + 0.39OH + 
+ 0.39NO3 : j(Pj_hno4) ;
+{35} HNO4 + OH = NO2 : ARR(1.50D-12,-360.0_dp,0.0_dp,TEMP) ;
+{36} HO2 + O3 = OH : ARR(1.40D-14,600.0_dp,0.0_dp,TEMP) ;
+{37} HO2 + HO2 = H2O2 : EP3(2.20D-13,-600.0_dp,1.85D-33,-980.0_dp,TEMP,C_M) ;
+{38} HO2 + HO2 + H2O = H2O2 : EP3(3.08D-34,-2800.0_dp,2.59D-54,-3180.0_dp,TEMP,C_M) ;
+{39} NO3 + HO2 = 0.8OH + 0.8NO2 + 0.2HNO3 : 4.00D-12 ;
+{40} NO3 + NO3 = NO2 + NO2 : ARR(8.50D-13,2450.0_dp,0.0_dp,TEMP) ;
+{41} H2O2 + hv = OH + OH : j(Pj_h2o2) ;
+{42} H2O2 + OH = HO2 : ARR(2.90D-12,160.0_dp,0.0_dp,TEMP) ;
+{43} OH + HO2 = H2O + M {O2} : ARR(4.80D-11,-250.0_dp,0.0_dp,TEMP) ;
+{44} OH + SO2 = HO2 + H2SO4 : FALL(4.00D-31,0.0_dp,-3.30_dp,2.00D-12,0.0_dp,0.0_dp,0.45_dp,TEMP,C_M) ;
+{45} OH + M {H2} = HO2 : 5.40D-7*ARR(7.70D-12,2100.0_dp,0.0_dp,TEMP) ;
+
+{192:152 } DMS+OH=SO2                     : ARR2(9.6e-12_dp, 234.0_dp, TEMP) ;
+{193:153 } DMS+OH=0.5SO2+0.5HO2           : usr24( TEMP, C_M ) ;
+{194:154 } DMS+NO3=SO2+HNO3               : ARR2(1.9e-13_dp, -520.0_dp, TEMP) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

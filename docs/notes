@@ -1,0 +1,2 @@
+
+When having a fork bomb, the following command may be used to kill all processes: kill -9 -1

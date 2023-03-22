@@ -1,0 +1,191 @@
+ &time_control
+ run_days                            = 7,
+ run_hours                           = 12,
+ run_minutes                         = 0,
+ run_seconds                         = 0,
+ start_year                          = 2014,
+ start_month                         = 03,
+ start_day                           = 10,
+ start_hour                          = 00,
+ end_year                            = 2014,
+ end_month                           = 03,
+ end_day                             = 18,
+ end_hour                            = 12,
+ interval_seconds                    = 21600,
+ input_from_file                     = .true.,
+ history_interval                    = 60,
+ frames_per_outfile                  = 24,
+ restart                             = .false.,
+ restart_interval                    = 180,
+ io_form_history                     = 2,
+ io_form_restart                     = 2,
+ io_form_input                       = 2,
+ io_form_boundary                    = 2,
+ io_form_auxinput5       	     = 2	     
+ io_form_auxinput12       	     = 2	     
+ debug_level                         = 0,
+ write_hist_at_0h_rst 		     = .true.
+ auxinput1_inname                    = "met_em.d<domain>.<date>"
+ auxinput12_inname  		     = "wrfchemi"
+ auxinput12_inname                   = "wrfchemi_d<domain>_<date>",
+ force_use_old_data                   = .true.,
+ 
+/
+
+ &domains
+ eta_levels			     = 1.000,0.995,0.989,0.982,0.974,0.966,
+                           	     0.958,0.950,0.941,0.931,0.921,0.910,
+				     0.899,0.885,0.870,0.851,0.832,0.813,
+                           	     0.793,0.773,0.750,0.719,0.672,0.622,
+                           	     0.571,0.520,0.467,0.417,0.370,0.328,
+                           	     0.288,0.252,0.220,0.189,0.162,0.137,
+                           	     0.114,0.094,0.076,0.061,0.047,0.035,
+                           	     0.025,0.015,0.007,0.000
+ time_step                           = 60, 
+ time_step_fract_num                 = 0,
+ time_step_fract_den                 = 1,
+ max_dom                             = 1,
+ e_we                                = 150,
+ e_sn                                = 100,
+ e_vert                              = 46,
+ p_top_requested                     = 5000, !Not sure about this
+ num_metgrid_levels                  = 38,
+ num_metgrid_soil_levels             = 4,
+ dx                                  = 10000,
+ dy                                  = 10000,
+ grid_id                             = 1,
+ parent_id                           = 1,
+ i_parent_start                      = 1,
+ j_parent_start                      = 1,
+ parent_grid_ratio                   = 1,
+ parent_time_step_ratio              = 1,
+ feedback                            = 0,
+ smooth_option                       = 0
+ /
+
+ &physics
+ num_land_cat                        = 24,
+ mp_physics                          = 10,
+ progn                               = 1,
+ ra_lw_physics                       = 4,
+ ra_sw_physics                       = 4,
+ radt                                = 15,
+ cam_abs_freq_s                      = 21600,
+ levsiz                              = 59,
+ paerlev                             = 29,
+ cam_abs_dim1                        = 4,
+ cam_abs_dim2                        = 45,
+ sf_sfclay_physics                   = 1,
+ sf_surface_physics                  = 5,
+ bl_pbl_physics                      = 1, !YSU scheme
+ megan_factors_file                  = 'megan21_emis_factors_c20130304.nc'
+ input_pft                           = .false.,
+ bldt                                = 0,
+ cu_physics                          = 5, !Possibly use 3 or 5
+ cugd_avedx                          = 1
+ cudt                                = 5,
+ ishallow                            = 0,
+ isfflx                              = 1,
+ ifsnow                              = 1,
+ icloud                              = 1,
+ surface_input_source                = 1,
+ num_soil_layers                     = 10,
+ sf_urban_physics                    = 0, 
+ mp_zero_out                         = 2,
+ mp_zero_out_thresh                  = 1.e-10,
+ maxiens                             = 1,
+ maxens                              = 3,
+ maxens2                             = 3,
+ maxens3                             = 16,
+ ensdim                              = 144,
+ cu_rad_feedback                     = .false.,
+ cu_diag                             = 1,
+ /
+
+ &fdda
+ /
+
+ &dfi_control
+/
+
+ &grib2
+ /
+
+ &dynamics
+ rk_ord				     = 3
+ w_damping                           = 1,   !Not sure
+ diff_opt                            = 1,   !Not sure   
+ km_opt                              = 4,   !Not sure   
+ diff_6th_opt                        = 0,      
+ diff_6th_factor                     = 0.12, !Not sure  
+ use_theta_m                         = 0,
+ hybrid_opt                          = 0,
+ base_temp                           = 290.
+ damp_opt                            = 0,
+ zdamp                               = 5000.,  
+ dampcoef                            = 0.2,    
+ khdif                               = 0,      
+ kvdif                               = 0,      
+ non_hydrostatic                     = .true., 
+ time_step_sound                     = 0,
+ h_mom_adv_order                     = 5,
+ v_mom_adv_order                     = 3,
+ h_sca_adv_order                     = 5,
+ v_sca_adv_order                     = 3,
+ moist_adv_opt                       = 2,      
+ scalar_adv_opt                      = 2,
+ chem_adv_opt                        = 2,
+ tke_adv_opt                         = 2
+ /
+
+ &bdy_control
+ spec_bdy_width                      = 5,
+ spec_zone                           = 1,
+ relax_zone                          = 4,	
+ specified                           = .true.,
+ nested                              = .false.,
+ /
+
+ &namelist_quilt
+ nio_tasks_per_group = 0,
+ nio_groups = 1,
+ /
+
+ &chem
+ input_chem_inname		     = "wrfchemi.d<domain>.<date>"
+ kemit                               = 0,
+ chem_opt                            = 209,
+ bioemdt                             = 0.5,
+ photdt                              = 15.,
+ chemdt                              = 6,
+ emiss_inpt_opt                      = 102
+ io_style_emissions                  = 2,
+ chem_in_opt                         = 0,
+ phot_opt                            = 2,
+ gas_drydep_opt                      = 1,
+ aer_drydep_opt                      = 311,
+ aer_aerodynres_opt                  = 1,
+ bio_emiss_opt                       = 4,
+ emiss_opt                           = 13,
+ dmsemis_opt			     = 1,
+ ne_area                             = 1000,
+ dust_opt                            = 0,
+ gas_bc_opt                          = 101,
+ gas_ic_opt                          = 101,
+ aer_bc_opt                          = 101,
+ aer_ic_opt                          = 101,
+ gaschem_onoff                       = 1,
+ aerchem_onoff                       = 1,
+ uq_aqsoa                            = 1,
+ vertmix_onoff                       = 1,
+ wetscav_onoff                       = 0,
+ cldchem_onoff                       = 1,
+ aer_ra_feedback                     = 1,
+ aer_op_opt                          = 1,
+ aero_diag_opt                       = 1,
+ aero_cw_diag_opt                    = 1,
+ diagnostic_chem                     = 2, 
+ chem_conv_tr                        = 1,
+ conv_tr_wetscav                     = 0,
+ have_bcs_chem                       = .true.,
+/
