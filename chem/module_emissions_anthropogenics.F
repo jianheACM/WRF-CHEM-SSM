@@ -397,7 +397,7 @@ is_mozart:if( is_moz_chm ) then
             chem(its:ite,kts,j,p_co)=chem(its:ite,kts,j,p_co)+ ebio_co(its:ite,j)*conv_rho(its:ite)
             chem(its:ite,kts,j,p_no)=chem(its:ite,kts,j,p_no)+ ebio_no(its:ite,j)*conv_rho(its:ite) 
             
-            chem(its:ite,kts,j,p_terp)=chem(its:ite,kts,j,p_terp)+ (ebio_api(its:ite,j)+ebio_lim(its:ite,j))*conv_rho(its:ite) 
+            chem(its:ite,kts,j,p_terp)=chem(its:ite,kts,j,p_terp)+ (ebio_api(its:ite,j)+ebio_lim(its:ite,j)+ebio_eclp(its:ite,j))*conv_rho(its:ite) 
             chem(its:ite,kts,j,p_meoh)=chem(its:ite,kts,j,p_meoh)+ ebio_moh(its:ite,j)*conv_rho(its:ite)
             chem(its:ite,kts,j,p_ethene)=chem(its:ite,kts,j,p_ethene)+ ebio_ete(its:ite,j)*conv_rho(its:ite)
             chem(its:ite,kts,j,p_etoh)=chem(its:ite,kts,j,p_etoh)+ ebio_eoh(its:ite,j)*conv_rho(its:ite)
