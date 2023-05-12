@@ -33,11 +33,15 @@ MODULE module_bioemi_beis314
                sebio_hc3,sebio_ete,sebio_olt,sebio_ket,sebio_ald,      &
                sebio_hcho,sebio_eth,sebio_ora2,sebio_co,sebio_nr,      &
                sebio_sesq,sebio_mbo,                                   & 
+               sebio_moh,sebio_eoh,sebio_act,                          & !RHS added OVCP, qzr++ for beis mapping racm2b_vcp to SSM CA 12km
+               sebio_acd,sebio_ora1,sebio_eclp,                        &
                noag_grow,noag_nongrow,nononag,slai,                    &
                ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,           &
                ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,           &
                ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,   &
                ebio_sesq,ebio_mbo,                                     & ! sesq and mbo are added
+               ebio_moh,ebio_eoh,ebio_act,                             & ! RHS added OVCP, qzr++ for beis mapping racm2b_vcp to SSM CA 12km
+               ebio_acd,ebio_ora1,ebio_eclp,                           &
                ids,ide, jds,jde, kds,kde,                              &
                ims,ime, jms,jme, kms,kme,                              &
                its,ite, jts,jte, kts,kte                               )
@@ -81,6 +85,8 @@ MODULE module_bioemi_beis314
                sebio_hc3,sebio_ete,sebio_olt,sebio_ket,sebio_ald,      &
                sebio_hcho,sebio_eth,sebio_ora2,sebio_co,sebio_nr,      &
                sebio_sesq,sebio_mbo,                                   &
+               sebio_moh,sebio_eoh,sebio_act,                          &
+               sebio_acd,sebio_ora1,sebio_eclp,                        & !qzr++ oVCPs from racm2b_vcp for beis SSM CA 12 km
                noag_grow,noag_nongrow,nononag
 
 ! Leaf area index for isoprene
@@ -93,7 +99,8 @@ MODULE module_bioemi_beis314
                ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,           &
                ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,           &
                ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,   &
-               ebio_sesq,ebio_mbo   
+               ebio_sesq,ebio_mbo,ebio_moh,ebio_eoh,ebio_act,          &
+               ebio_acd,ebio_ora1,ebio_eclp       !qzr++ oVCPs from racm2b_vcp for beis  SSM CA12km
 
 ! .. Local Scalars .. 
 
@@ -111,6 +118,7 @@ MODULE module_bioemi_beis314
                se_hc3,se_ete,se_olt,se_ket,se_ald,      &
                se_hcho,se_eth,se_ora2,se_co,se_nr,      &
                se_mbo,se_sesq,                          & 
+               se_moh,se_eoh,se_act,se_acd,se_ora1,se_eclp,     & !qzr++ oVCPs from racm2b_vcp for beis SSM CA12km
                growagno,ngrowagno,nonagno
 !   leaf area index for isoprene
       REAL  ::  tlai  
@@ -186,6 +194,14 @@ MODULE module_bioemi_beis314
            ! SESQ and MBO are added
            se_sesq  = sebio_sesq(i,j)
            se_mbo  = sebio_mbo(i,j)
+
+           ! RHS added OVCP, qzr++ for beis SSM CA12km
+           se_moh  = sebio_moh(i,j)
+           se_eoh  = sebio_eoh(i,j)
+           se_act  = sebio_act(i,j)
+           se_acd  = sebio_acd(i,j)
+           se_ora1  = sebio_ora1(i,j)
+           se_eclp = sebio_eclp(i,j)
 
            growagno = noag_grow(i,j)
            ngrowagno = noag_nongrow(i,j) 
@@ -288,6 +304,14 @@ MODULE module_bioemi_beis314
            ! SESQ and MBO are added
            ebio_sesq(i,j)  =  se_sesq * cfovoc
            ebio_mbo(i,j)   =  se_mbo * cfovoc
+
+           ! RHS added OVCP, qzr++ from racm2b_vcp for beis SSM 12kmCA
+           ebio_moh(i,j)  =  se_moh * cfovoc
+           ebio_eoh(i,j)  =  se_eoh * cfovoc
+           ebio_act(i,j)  =  se_act * cfovoc
+           ebio_acd(i,j)  =  se_acd * cfovoc
+           ebio_ora1(i,j)  =  se_ora1 * cfovoc
+           ebio_eclp(i,j) = se_eclp * cfovoc
 
 !... NO emissions
 

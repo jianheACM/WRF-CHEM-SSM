@@ -880,7 +880,8 @@
       
       !!!!! CHARLES HE
       !!GOTO 456
-
+      !QZR +++ oVCPs from racm2b_vcp added: moh, eoh, act, acd, ora1, eclp:
+      ! for beis CA 12km (QZR++)
       call emissions_driver(grid%id,ktau,grid%dt,grid%DX,                                  &
               adapt_step_flag, curr_secs,                                                  &
               grid%plumerisefire_frq,grid%stepfirepl,                                      &
@@ -903,11 +904,16 @@
               grid%sebio_ket,grid%sebio_ald,grid%sebio_hcho,grid%sebio_eth,                &
               grid%sebio_ora2,grid%sebio_co,grid%sebio_nr,                                 &
               grid%sebio_sesq,grid%sebio_mbo,                                              &
+              grid%sebio_moh,grid%sebio_eoh,grid%sebio_act,                                &
+              grid%sebio_acd,grid%sebio_ora1,grid%sebio_eclp,                              &
               grid%noag_grow,grid%noag_nongrow,grid%nononag,grid%slai,                     &
               grid%ebio_iso,grid%ebio_oli,grid%ebio_api,grid%ebio_lim,grid%ebio_xyl,       &
               grid%ebio_hc3,grid%ebio_ete,grid%ebio_olt,grid%ebio_ket,grid%ebio_ald,       &
               grid%ebio_hcho,grid%ebio_eth,grid%ebio_ora2,grid%ebio_co,grid%ebio_nr,       &
-              grid%ebio_no,grid%ebio_sesq,grid%ebio_mbo,grid%ebio_bpi,grid%ebio_myrc,      &
+              grid%ebio_no,grid%ebio_sesq,grid%ebio_mbo,                                   &
+              grid%ebio_moh,grid%ebio_eoh,grid%ebio_act,                                   &
+              grid%ebio_acd,grid%ebio_ora1,grid%ebio_eclp,                                 &
+              grid%ebio_bpi,grid%ebio_myrc,      &
               grid%ebio_c10h16,grid%ebio_tol,grid%ebio_bigalk,                             &
               grid%ebio_ch3oh,grid%ebio_acet,grid%ebio_nh3,grid%ebio_no2,                  &
               grid%ebio_c2h5oh,grid%ebio_ch3cooh,grid%ebio_mek,grid%ebio_bigene,           &

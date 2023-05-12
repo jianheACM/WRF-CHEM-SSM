@@ -260,13 +260,15 @@ is_mozart:if( is_moz_chm ) then
 
     END subroutine add_anthropogenics
 !
-!
+!     qzr++ oVCPs (moh,eoh,act,acd, ora1,eclp) added from racm2b_vcp for beis SSM CA12km
     subroutine add_biogenics(id,dtstep,dz8w,config_flags,rho_phy,chem, &
          e_bio,ne_area,                                                &
          ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,                 &
          ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,                 &
          ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,         &
          ebio_sesq,ebio_mbo,                                           & 
+         ebio_moh,ebio_eoh,ebio_act,                                   &
+         ebio_acd,ebio_ora1,ebio_eclp,                                 &
          ids,ide, jds,jde, kds,kde,                                    &
          ims,ime, jms,jme, kms,kme,                                    &
          its,ite, jts,jte, kts,kte                                     )
@@ -291,7 +293,9 @@ is_mozart:if( is_moz_chm ) then
          ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,                     &
          ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,                     &
          ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,             &
-         ebio_sesq,ebio_mbo 
+         ebio_sesq,ebio_mbo,                                         &
+         ebio_moh,ebio_eoh,ebio_act,                                   &
+         ebio_acd,ebio_ora1,ebio_eclp 
 !
    REAL,  DIMENSION( ims:ime , kms:kme , jms:jme )         ,               &
           INTENT(IN   ) ::                                                 &
@@ -372,52 +376,104 @@ is_mozart:if( is_moz_chm ) then
           chem(its:ite,kts,j,p_par) = chem(its:ite,kts,j,p_par) + e_bio(its:ite,j,p_hc3-1)*4.8*conv_rho(its:ite)
         endif
       end do
-
+     ! Add if for SAPRC99_SIMPLESOM_MOSAIC_4BIN_AQ_KPP
      CASE (BEIS314)
-     CALL wrf_debug(100,'adding biogenic emissions: beis3.1.4')
-      do j=jts,jte  
-        conv_rho(its:ite)=4.828e-4/rho_phy(its:ite,kts,j)*dtstep/(dz8w(its:ite,kts,j)*60.)
-        chem(its:ite,kts,j,p_iso)=chem(its:ite,kts,j,p_iso)+ ebio_iso(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_oli)=chem(its:ite,kts,j,p_oli)+ ebio_oli(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_xyl)=chem(its:ite,kts,j,p_xyl)+ ebio_xyl(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_hc3)=chem(its:ite,kts,j,p_hc3)+ ebio_hc3(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_olt)=chem(its:ite,kts,j,p_olt)+ ebio_olt(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_ket)=chem(its:ite,kts,j,p_ket)+ ebio_ket(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_ald)=chem(its:ite,kts,j,p_ald)+ ebio_ald(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_hcho)=chem(its:ite,kts,j,p_hcho)+ ebio_hcho(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_eth)=chem(its:ite,kts,j,p_eth)+ ebio_eth(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_ora2)=chem(its:ite,kts,j,p_ora2)+ ebio_ora2(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_co)=chem(its:ite,kts,j,p_co)+ ebio_co(its:ite,j)*conv_rho(its:ite)
-        chem(its:ite,kts,j,p_no)=chem(its:ite,kts,j,p_no)+ ebio_no(its:ite,j)*conv_rho(its:ite)
+       if( config_flags%chem_opt == SAPRC99_SIMPLESOM_MOSAIC_4BIN_AQ_KPP ) then
+         !Default BEIS 3.14 calculations qzr++ if-else block for SSM CA12km beis
+         !mapping Biogenic from racm2b_vcp to SS-saprc99
+         CALL wrf_debug(100,'adding biogenic emissions: beis3.1.4 for SS-MOSAIC')
+          do j=jts,jte
+            conv_rho(its:ite)=4.828e-4/rho_phy(its:ite,kts,j)*dtstep/(dz8w(its:ite,kts,j)*60.)
+            chem(its:ite,kts,j,p_isoprene)=chem(its:ite,kts,j,p_isoprene)+ ebio_iso(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_ole2)=chem(its:ite,kts,j,p_ole2)+ (ebio_oli(its:ite,j)+ebio_mbo(its:ite,j))*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_aro2)=chem(its:ite,kts,j,p_aro2)+ ebio_xyl(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_c3h8)=chem(its:ite,kts,j,p_c3h8)+ ebio_hc3(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_ole1)=chem(its:ite,kts,j,p_ole1)+ ebio_olt(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_mvk)=chem(its:ite,kts,j,p_mvk)+ ebio_ket(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_rcho)=chem(its:ite,kts,j,p_rcho)+ ebio_ald(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_hcho)=chem(its:ite,kts,j,p_hcho)+ ebio_hcho(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_alk1)=chem(its:ite,kts,j,p_alk1)+ ebio_eth(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_cco_oh)=chem(its:ite,kts,j,p_cco_oh)+ ebio_ora2(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_co)=chem(its:ite,kts,j,p_co)+ ebio_co(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_no)=chem(its:ite,kts,j,p_no)+ ebio_no(its:ite,j)*conv_rho(its:ite) 
+            
+            chem(its:ite,kts,j,p_terp)=chem(its:ite,kts,j,p_terp)+ (ebio_api(its:ite,j)+ebio_lim(its:ite,j))*conv_rho(its:ite) 
+            chem(its:ite,kts,j,p_meoh)=chem(its:ite,kts,j,p_meoh)+ ebio_moh(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_ethene)=chem(its:ite,kts,j,p_ethene)+ ebio_ete(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_etoh)=chem(its:ite,kts,j,p_etoh)+ ebio_eoh(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_acet)=chem(its:ite,kts,j,p_acet)+ ebio_act(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_ccho)=chem(its:ite,kts,j,p_ccho)+ ebio_acd(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_hcooh)=chem(its:ite,kts,j,p_hcooh)+ ebio_ora1(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_sesq)=chem(its:ite,kts,j,p_sesq)+ ebio_sesq(its:ite,j)*conv_rho(its:ite)
+          enddo
+
+         
+       else
+         !Default BEIS 3.14 calculations qzr++ if-else block for SSM CA12km beis mapping
+         CALL wrf_debug(100,'adding biogenic emissions: beis3.1.4')
+          do j=jts,jte  
+            conv_rho(its:ite)=4.828e-4/rho_phy(its:ite,kts,j)*dtstep/(dz8w(its:ite,kts,j)*60.)
+            chem(its:ite,kts,j,p_iso)=chem(its:ite,kts,j,p_iso)+ ebio_iso(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_oli)=chem(its:ite,kts,j,p_oli)+ ebio_oli(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_xyl)=chem(its:ite,kts,j,p_xyl)+ ebio_xyl(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_hc3)=chem(its:ite,kts,j,p_hc3)+ ebio_hc3(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_olt)=chem(its:ite,kts,j,p_olt)+ ebio_olt(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_ket)=chem(its:ite,kts,j,p_ket)+ ebio_ket(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_ald)=chem(its:ite,kts,j,p_ald)+ ebio_ald(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_hcho)=chem(its:ite,kts,j,p_hcho)+ ebio_hcho(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_eth)=chem(its:ite,kts,j,p_eth)+ ebio_eth(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_ora2)=chem(its:ite,kts,j,p_ora2)+ ebio_ora2(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_co)=chem(its:ite,kts,j,p_co)+ ebio_co(its:ite,j)*conv_rho(its:ite)
+            chem(its:ite,kts,j,p_no)=chem(its:ite,kts,j,p_no)+ ebio_no(its:ite,j)*conv_rho(its:ite)
 !
 ! RADM only
 !
-        if(p_ol2 >= param_first_scalar) then
-          chem(its:ite,kts,j,p_ol2)=chem(its:ite,kts,j,p_ol2)+ ebio_ete(its:ite,j)*conv_rho(its:ite)
-        endif
+            if(p_ol2 >= param_first_scalar) then
+              chem(its:ite,kts,j,p_ol2)=chem(its:ite,kts,j,p_ol2)+ ebio_ete(its:ite,j)*conv_rho(its:ite)
+            endif
 !
 ! RACM only
 !
-        if(p_api >= param_first_scalar) then
-          chem(its:ite,kts,j,p_api)=chem(its:ite,kts,j,p_api)+ ebio_api(its:ite,j)*conv_rho(its:ite)
-        endif
-        if(p_lim >= param_first_scalar) then
-          chem(its:ite,kts,j,p_lim)=chem(its:ite,kts,j,p_lim)+ ebio_lim(its:ite,j)*conv_rho(its:ite)
-        endif
-        if(p_ete >= param_first_scalar) then
-          chem(its:ite,kts,j,p_ete)=chem(its:ite,kts,j,p_ete)+ ebio_ete(its:ite,j)*conv_rho(its:ite)
-        endif
+            if(p_api >= param_first_scalar) then
+              chem(its:ite,kts,j,p_api)=chem(its:ite,kts,j,p_api)+ ebio_api(its:ite,j)*conv_rho(its:ite)
+            endif
+            if(p_lim >= param_first_scalar) then
+              chem(its:ite,kts,j,p_lim)=chem(its:ite,kts,j,p_lim)+ ebio_lim(its:ite,j)*conv_rho(its:ite)
+            endif
+            if(p_ete >= param_first_scalar) then
+              chem(its:ite,kts,j,p_ete)=chem(its:ite,kts,j,p_ete)+ ebio_ete(its:ite,j)*conv_rho(its:ite)
+            endif
 !
 ! SESQ and MBO are added, it works for RACM_SOA_VBS_KPP option
 !
-        if(p_sesq >= param_first_scalar) then
-          chem(its:ite,kts,j,p_sesq)=chem(its:ite,kts,j,p_sesq)+ ebio_sesq(its:ite,j)*conv_rho(its:ite)
-        endif
-        if(p_mbo >= param_first_scalar) then
-          chem(its:ite,kts,j,p_mbo)=chem(its:ite,kts,j,p_mbo)+ ebio_mbo(its:ite,j)*conv_rho(its:ite)
-        endif
-      enddo
+            if(p_sesq >= param_first_scalar) then
+              chem(its:ite,kts,j,p_sesq)=chem(its:ite,kts,j,p_sesq)+ ebio_sesq(its:ite,j)*conv_rho(its:ite)
+            endif
+            if(p_mbo >= param_first_scalar) then
+              chem(its:ite,kts,j,p_mbo)=chem(its:ite,kts,j,p_mbo)+ ebio_mbo(its:ite,j)*conv_rho(its:ite)
+            endif
+            !qzr commented
+            !if(p_moh >= param_first_scalar) then
+            !  chem(its:ite,kts,j,p_moh)=chem(its:ite,kts,j,p_moh)+ ebio_moh(its:ite,j)*conv_rho(its:ite)
+            !endif
+            !if(p_eoh >= param_first_scalar) then
+            !  chem(its:ite,kts,j,p_eoh)=chem(its:ite,kts,j,p_eoh)+ ebio_eoh(its:ite,j)*conv_rho(its:ite)
+            !endif
+            !if(p_act >= param_first_scalar) then
+            !  chem(its:ite,kts,j,p_act)=chem(its:ite,kts,j,p_act)+ ebio_act(its:ite,j)*conv_rho(its:ite)
+            !endif
+            !if(p_acd >= param_first_scalar) then
+            !  chem(its:ite,kts,j,p_acd)=chem(its:ite,kts,j,p_acd)+ ebio_acd(its:ite,j)*conv_rho(its:ite)
+            !endif
+            !if(p_ora1 >= param_first_scalar) then
+            !  chem(its:ite,kts,j,p_ora1)=chem(its:ite,kts,j,p_ora1)+ ebio_ora1(its:ite,j)*conv_rho(its:ite)
+            !endif
+            !if(p_eclp >= param_first_scalar) then
+            !  chem(its:ite,kts,j,p_eclp)=chem(its:ite,kts,j,p_eclp)+ ebio_eclp(its:ite,j)*conv_rho(its:ite)
+            !endif
 
+          enddo
+       endif !if else block for SSM 12kmCA beis mapping qzr++
 
      CASE (MEGAN2,MEGAN2_CLM)
 

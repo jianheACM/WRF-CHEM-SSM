@@ -4,7 +4,7 @@
 !                   William Gustafson (PNNL), Serena Chung (WSU), 
 !                   Saulo Freitas (CPTEC), and Georg Grell
 !
-!
+!   QZR++: oVCPs added from racm2b_vcp for beis CA12 km
 MODULE module_emissions_driver
    IMPLICIT NONE
 CONTAINS
@@ -28,11 +28,16 @@ CONTAINS
          sebio_hc3,sebio_ete,sebio_olt,sebio_ket,sebio_ald,                &   
          sebio_hcho,sebio_eth,sebio_ora2,sebio_co,sebio_nr,                &
          sebio_sesq,sebio_mbo,                                             & 
+         sebio_moh,sebio_eoh,sebio_act,                                    &
+         sebio_acd,sebio_ora1,sebio_eclp,                                  &
          noag_grow,noag_nongrow,nononag,slai,                              &
          ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,                     &
          ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,                     &
          ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,             &
-         ebio_sesq, ebio_mbo,ebio_bpi,ebio_myrc,                           &
+         ebio_sesq, ebio_mbo,                                              &
+         ebio_moh,ebio_eoh,ebio_act,                                       &
+         ebio_acd,ebio_ora1,ebio_eclp,                                     &
+         ebio_bpi,ebio_myrc,                           &
          ebio_c10h16,ebio_tol,ebio_bigalk,ebio_ch3oh,ebio_acet,            &
          ebio_nh3,ebio_no2,ebio_c2h5oh,ebio_ch3cooh,ebio_mek,              &
          ebio_bigene,ebio_c2h6,ebio_c2h4,ebio_c3h6,ebio_c3h8,ebio_so2,     &
@@ -234,7 +239,7 @@ CONTAINS
                                                      vis_dust
   REAL, DIMENSION( ims:ime, config_flags%num_soil_layers, jms:jme ) ,      &
       INTENT(INOUT ) ::                             smois, tslb    
-
+!qzr++ oVCPs from racm2b_vcp for beis SSM CA 12km
    REAL,  DIMENSION( ims:ime , jms:jme )                   ,               &
          OPTIONAL,                                                         &
           INTENT(INOUT   ) ::                                                 &
@@ -242,11 +247,16 @@ CONTAINS
                sebio_hc3,sebio_ete,sebio_olt,sebio_ket,sebio_ald,      &
                sebio_hcho,sebio_eth,sebio_ora2,sebio_co,sebio_nr,      &
                sebio_sesq,sebio_mbo,                                   & 
+               sebio_moh,sebio_eoh,sebio_act,     &
+               sebio_acd,sebio_ora1,sebio_eclp,                        &
                noag_grow,noag_nongrow,nononag,slai,                    &
                ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,           &
                ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,           &
                ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,   &
-               ebio_sesq,ebio_mbo,ebio_bpi,ebio_myrc,                  &
+               ebio_sesq,ebio_mbo,                                     &
+               ebio_moh,ebio_eoh,ebio_act,          &
+               ebio_acd,ebio_ora1,ebio_eclp,                           &
+               ebio_bpi,ebio_myrc,                  &
                ebio_c10h16,ebio_tol,ebio_bigalk, ebio_ch3oh,ebio_acet, &
                ebio_nh3,ebio_no2,ebio_c2h5oh,ebio_ch3cooh,ebio_mek,    &
                ebio_bigene,ebio_c2h6,ebio_c2h4,ebio_c3h6,ebio_c3h8,    &
@@ -825,7 +835,7 @@ CONTAINS
     END SELECT fire_select
 !  endif !---YZ0220
 !!**************** END FIRE, BEGIN BIOGENIC EMISSIONS
-!
+!  QZR++ oVCPs added from racm2b_vcp for beis SSM CA 12 km
     bioem_select: SELECT CASE(config_flags%bio_emiss_opt)
      CASE (GUNTHER1)
        if(ktau.eq.1.or.mod(ktau,stepbioe).eq.0)then
@@ -856,11 +866,15 @@ CONTAINS
                sebio_hc3,sebio_ete,sebio_olt,sebio_ket,sebio_ald,      &
                sebio_hcho,sebio_eth,sebio_ora2,sebio_co,sebio_nr,      &
                sebio_sesq,sebio_mbo,                                   &
+               sebio_moh,sebio_eoh,sebio_act,                          &
+               sebio_acd,sebio_ora1,sebio_eclp,                        &
                noag_grow,noag_nongrow,nononag,slai,                    &
                ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,           &
                ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,           &
                ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,   &
                ebio_sesq,ebio_mbo,                                     &
+               ebio_moh,ebio_eoh,ebio_act,                             &
+               ebio_acd,ebio_ora1,ebio_eclp,                           &
                ids,ide, jds,jde, kds,kde,                              &
                ims,ime, jms,jme, kms,kme,                              &
                its,ite, jts,jte, kts,kte                               )
@@ -1004,7 +1018,7 @@ CONTAINS
     END SELECT bioem_select
 
 !!! **************** END BIOGENICS, ADD EMISSIONS FOR VARIOUS PACKAGES
-!
+!qzr++ oVCPs added from racm2b_vcp for beis CA 12 km
     gas_addemiss_select: SELECT CASE(config_flags%chem_opt)
     CASE (RADM2, RADM2_KPP, RADM2SORG, RADM2SORG_AQ, RADM2SORG_AQCHEM, RADM2SORG_KPP, &
           RACM_KPP, RACMPM_KPP, RACM_MIM_KPP, RACMSORG_AQ, RACMSORG_AQCHEM_KPP, RACM_ESRLSORG_AQCHEM_KPP, RACMSORG_KPP, &
@@ -1030,6 +1044,8 @@ CONTAINS
             ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,               &
             ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,       &
             ebio_sesq,ebio_mbo,                                         & 
+            ebio_moh,ebio_eoh,ebio_act,                                 &
+            ebio_acd,ebio_ora1,ebio_eclp,                               &
             ids,ide, jds,jde, kds,kde,                                  &
             ims,ime, jms,jme, kms,kme,                                  &
             its,ite, jts,jte, kts,kte                                   )
@@ -1065,13 +1081,15 @@ CONTAINS
        !       ids,ide, jds,jde, kds,kde,                                 &
        !       ims,ime, jms,jme, kms,kme,                                 &
        !       its,ite, jts,jte, kts,kte                                  )
-       
+         !qzr++ oVCPs added from racm2b_vcp for beis SSM CA 12km case      
        call add_biogenics(id,dtstep,dz8w,config_flags, rho_phy,chem,    &
             e_bio,ne_area,                                              &
             ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,               &
             ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,               &
             ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,       &
             ebio_sesq,ebio_mbo,                                         & 
+            ebio_moh,ebio_eoh,ebio_act,                                 &
+            ebio_acd,ebio_ora1,ebio_eclp,                               &
             ids,ide, jds,jde, kds,kde,                                  &
             ims,ime, jms,jme, kms,kme,                                  &
             its,ite, jts,jte, kts,kte                                   )
@@ -1089,6 +1107,7 @@ CONTAINS
             its,ite, jts,jte, kts,kte                                    )
        call wrf_debug(15,'emissions_driver calling cb05_addemiss_bio')
        ! fixed a bug related to CB05 MEGAN mapping by KW 03/20/2017
+        !qzr++ oVCPs added from racm2b_vcp for beis SSM 12 km CA
        if (config_flags%bio_emiss_opt .ne. 0 .and.                      &
            config_flags%bio_emiss_opt .ne. GUNTHER1) then
          call add_biogenics(id,dtstep,dz8w,config_flags, rho_phy,chem,    &
@@ -1097,6 +1116,8 @@ CONTAINS
             ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,               &
             ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,       &
             ebio_sesq,ebio_mbo,                                         &
+            ebio_moh,ebio_eoh,ebio_act,                                 &
+            ebio_acd,ebio_ora1,ebio_eclp,                               &
             ids,ide, jds,jde, kds,kde,                                  &
             ims,ime, jms,jme, kms,kme,                                  &
             its,ite, jts,jte, kts,kte                                   )
@@ -1291,12 +1312,15 @@ CONTAINS
       endif
 
       !BSINGH - Adding add_biogenics call
+       ! qzr++ Adding oVCPs from racm2b_vcp for beis SSM 12km CA
       call add_biogenics(id,dtstep,dz8w,config_flags, rho_phy,chem,     &
             e_bio,ne_area,                                              &
             ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,               &
             ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,               &
             ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,       &
             ebio_sesq,ebio_mbo,                                         & 
+            ebio_moh,ebio_eoh,ebio_act,                                 &
+            ebio_acd,ebio_ora1,ebio_eclp,                               &
             ids,ide, jds,jde, kds,kde,                                  &
             ims,ime, jms,jme, kms,kme,                                  &
             its,ite, jts,jte, kts,kte                                   )
@@ -1452,12 +1476,15 @@ CONTAINS
        end do
       endif
       !BSINGH - Adding add_biogenics call
+        !qzr++ - Adding oVCPs from racm2b_vcp for beis SSM 12km CA
       call add_biogenics(id,dtstep,dz8w,config_flags, rho_phy,chem,     &
             e_bio,ne_area,                                              &
             ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,               &
             ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,               &
             ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,       &
             ebio_sesq,ebio_mbo,                                         & 
+            ebio_moh,ebio_eoh,ebio_act,                                 &
+            ebio_acd,ebio_ora1,ebio_eclp,                               &
             ids,ide, jds,jde, kds,kde,                                  &
             ims,ime, jms,jme, kms,kme,                                  &
             its,ite, jts,jte, kts,kte                                   )
@@ -1685,14 +1712,16 @@ CONTAINS
        end do
 
       END IF COND1
-
-
+       
+        !qzr++ - Addinf oVCPs from racm2b_vcp for beis CA 12 km
       call add_biogenics(id,dtstep,dz8w,config_flags, rho_phy,chem,     &
             e_bio,ne_area,                                              &
             ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,               &
             ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,               &
             ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,       &
             ebio_sesq,ebio_mbo,                                         &
+            ebio_moh,ebio_eoh,ebio_act,                                 &
+            ebio_acd,ebio_ora1,ebio_eclp,                               &
             ids,ide, jds,jde, kds,kde,                                  &
             ims,ime, jms,jme, kms,kme,                                  &
             its,ite, jts,jte, kts,kte                                   )
@@ -1714,13 +1743,16 @@ CONTAINS
             its,ite, jts,jte, kts,kte                                   )
        call wrf_debug(15,'emissions_driver calling add_biogenics')
        ! Do NOT call add_biogenics if using MEGAN v2.04 biogenic emissions
-       ! module
+       ! module 
+       ! qzr++ - Adding oVCPs from racm2b_vcp for beis SSM 12km CA
        call add_biogenics(id,dtstep,dz8w,config_flags,rho_phy,chem,     &
             e_bio,ne_area,                                              &
             ebio_iso,ebio_oli,ebio_api,ebio_lim,ebio_xyl,               &
             ebio_hc3,ebio_ete,ebio_olt,ebio_ket,ebio_ald,               &
             ebio_hcho,ebio_eth,ebio_ora2,ebio_co,ebio_nr,ebio_no,       &
             ebio_sesq,ebio_mbo,                                         & 
+            ebio_moh,ebio_eoh,ebio_act,                                 &
+            ebio_acd,ebio_ora1,ebio_eclp,                               &
             ids,ide, jds,jde, kds,kde,                                  &
             ims,ime, jms,jme, kms,kme,                                  &
             its,ite, jts,jte, kts,kte                                   )
