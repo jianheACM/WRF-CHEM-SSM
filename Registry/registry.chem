@@ -78,6 +78,18 @@ state    real  e_ald          i+jf     emis_ant     1         Z      i5r    "E_A
 state    real  e_ket          i+jf     emis_ant     1         Z      i5r    "E_KET"               "EMISSIONS"          "mol km^-2 hr^-1"
 state    real  e_ora2         i+jf     emis_ant     1         Z      i5r    "E_ORA2"              "EMISSIONS"          "mol km^-2 hr^-1"
 state    real  e_nh3          i+jf     emis_ant     1         Z      i5r    "E_NH3"               "EMISSIONS"          "mol km^-2 hr^-1"
+# Additional r2smh anth for mapping to SSM anth in emissions_driver
+state    real  e_moh          i+jf     emis_ant     1         Z      i5rh   "E_MOH"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_eoh          i+jf     emis_ant     1         Z      i5rh   "E_EOH"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_act          i+jf     emis_ant     1         Z      i5rh   "E_ACT"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_acd          i+jf     emis_ant     1         Z      i5rh   "E_ACD"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_ace          i+jf     emis_ant     1         Z      i5rh   "E_ACE"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_mct          i+jf     emis_ant     1         Z      i5rh   "E_MCT"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_ben          i+jf     emis_ant     1         Z      i5rh   "E_BEN"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_xyo          i+jf     emis_ant     1         Z      i5rh   "E_XYO"               "EMISSIONS"          "mol km^-2 hr^-1"
+state    real  e_dien         i+jf     emis_ant     1         Z      i5rh   "E_DIEN"              "EMISSIONS"          "mol km^-2 hr^-1"
+#End R2SMH qzr++
+
 state    real  e_pm_25        i+jf     emis_ant     1         Z      i5r    "E_PM_25"             "EMISSIONS"          "ug/m3 m/s"
 state    real  e_pm_10        i+jf     emis_ant     1         Z      i5r    "E_PM_10"             "EMISSIONS"          "ug/m3 m/s"
 state    real  e_pm25i        i+jf     emis_ant     1         Z      i5r    "E_PM25I"             "EMISSION RATE OF UNIDEN. PM2.5 MASS"  "ug/m3 m/s"
@@ -265,6 +277,18 @@ state   real    e_bald          i+jf    emis_ant        1       Z       i5r     
 state   real    e_hcooh         i+jf    emis_ant        1       Z       i5r      "E_HCOOH"       "HCOOH emissions"       "mol km^-2 hr^-1"
 state   real    e_cco_oh        i+jf    emis_ant        1       Z       i5r      "E_CCO_OH"      "CCO_OH emissions"      "mol km^-2 hr^-1"
 state   real    e_rco_oh        i+jf    emis_ant        1       Z       i5r      "E_RCO_OH"      "RCO_OH emissions"      "mol km^-2 hr^-1"
+
+#r2smh emissions (mapped to SSM anth in emissions_driver) qzr++
+#state   real    e_d4silx          i+jf    emis_ant        1       Z       i5r      "E_D4SILX"        "D4 Siloxane emissions"        "mol km^-2 hr^-1"
+#state   real    e_d5silx          i+jf    emis_ant        1       Z       i5r      "E_D5SILX"        "D5 Siloxane  emissions"        "mol km^-2 hr^-1"
+#state   real    e_pcbtf           i+jf    emis_ant        1       Z       i5r      "E_PCBTF"        "PCBTF emissions"        "mol km^-2 hr^-1"
+#state   real    e_pdcbz           i+jf    emis_ant        1       Z       i5r      "E_PDCBZ"        "PDCBZ  emissions"        "mol km^-2 hr^-1"
+state   real    e_nald            i+jf    emis_ant        1       Z       i5r      "E_NALD"        "Nonanal  emissions"        "mol km^-2 hr^-1"
+state   real    e_oald            i+jf    emis_ant        1       Z       i5r      "E_OALD"        "Octanal  emissions"        "mol km^-2 hr^-1"
+state   real    e_cald            i+jf    emis_ant        1       Z       i5r      "E_CALD"        "Cooking aldehydes  emissions"        "mol km^-2 hr^-1"
+state   real    e_cuald            i+jf    emis_ant        1       Z       i5r      "E_CUALD"        "Cooking unsaturated aldehydes  emissions"        "mol km^-2 hr^-1"
+#state   real    e_ucm          i+jf    emis_ant        1       Z       i5r      "E_UCM"        "UCM emissions"        "mol km^-2 hr^-1"
+state   real    e_ora1           i+jf    emis_ant        1       Z       i5r      "E_ORA1"        "ORA1 emissions"        "mol km^-2 hr^-1"
 
 # GHG anthropogenic emissions
 state   real    e_co2tst        i+jf    emis_ant        1       Z       i5       "E_CO2TST"      "Anthropogenic CO2 test fluxes"     "mol km^-2 hr^-1"
@@ -7269,7 +7293,7 @@ package   cri_mosaic_4bin_aq_kpp  chem_opt==611          -             chem:dms,
 #emission package definitions
 #
 package   eradm           emiss_opt==2                   -             emis_ant:e_iso,e_so2,e_no,e_co,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3
-package   eradmsorg       emiss_opt==3                   -             emis_ant:e_iso,e_so2,e_no,e_no2,e_co,e_ch4,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_pm25i,e_pm25j,e_pm_10,e_eci,e_ecj,e_orgi,e_orgj,e_so4i,e_so4j,e_no3i,e_no3j,e_naaj,e_naai,e_orgi_a,e_orgj_a,e_orgi_bb,e_orgj_bb,e_hcl,e_cli,e_clj,e_ch3cl
+package   eradmsorg       emiss_opt==3                   -             emis_ant:e_iso,e_so2,e_no,e_no2,e_co,e_ch4,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_moh,e_eoh,e_act,e_acd,e_ace,e_mct,e_ben,e_xyo,e_dien,e_pm25i,e_pm25j,e_pm_10,e_eci,e_ecj,e_orgi,e_orgj,e_so4i,e_so4j,e_nald,e_oald,e_cald,e_cuald,e_ora1,e_no3i,e_no3j,e_naaj,e_naai,e_orgi_a,e_orgj_a,e_orgi_bb,e_orgj_bb,e_hcl,e_cli,e_clj,e_ch3cl
 package   ecbmz_mosaic    emiss_opt==4                   -             emis_ant:e_iso,e_so2,e_no,e_co,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_no2,e_ch3oh,e_c2h5oh,e_pm25i,e_pm25j,e_eci,e_ecj,e_orgi,e_orgj,e_so4i,e_so4j,e_no3i,e_no3j,e_so4c,e_no3c,e_orgc,e_ecc
 package   ecptec          emiss_opt==5                   -             emis_ant:e_iso,e_so2,e_no,e_no2,e_co,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_pm_25,e_pm_10,e_oc,e_sulf,e_bc
 package   gocart_ecptec   emiss_opt==6                   -             emis_ant:e_so2,e_sulf,e_bc,e_oc,e_pm_25,e_pm_10

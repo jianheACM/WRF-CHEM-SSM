@@ -1492,7 +1492,9 @@ CONTAINS
 
       CASE (SAPRC99_MOSAIC_4BIN_IEPOX_VBS_AQ_KPP, SAPRC99_SIMPLESOM_MOSAIC_4BIN_AQ_KPP)
       
-      COND1: IF (config_flags%emiss_opt == 13 ) THEN
+      !COND1: IF (config_flags%emiss_opt == 13 ) THEN !qzr ++ for Anth Mapping
+      !racm2b_vcp to SSM
+      COND1: IF (config_flags%emiss_opt == 13 .or. config_flags%emiss_opt == 3 ) THEN
       
        do j = jts,jte
           do i = its,ite
@@ -1507,46 +1509,67 @@ CONTAINS
                 oconv3= (dtstep/dz8w(i,k,j))*alt(i,k,j)*28/283*1e-3*4.5 !For biomass there are 4.5 moles of ) /mole of C15H27N0.3
                 oconv4=(dtstep/dz8w(i,k,j))*alt(i,k,j)*28/226*1e-3*0.9  !For fossil there are 0.9 moles of O per mole of C15H27N0.3
 
-
+                !qzr++ 50-50% mapping of p_e_hc3 and p_e_olt for now (Temp fix)- with current RACM2B_VCP wrfchemi
+                ! Qzr++ possible fix: p_C3H8, p_C3H6 mapped to p_e_c3h8 & p_e_c3h6 respectively 
+                ! Also see similar possible fix for p_e_ket (isoprod can be separate) & p_e_ora2 (cco_oh can be separate)
+                 
                 chem(i,k,j,p_so2)  = chem(i,k,j,p_so2)                             &
                      +emis_ant(i,k,j,p_e_so2)*conv*config_flags%uq_so2
+                !chem(i,k,j,p_c2h6)  = chem(i,k,j,p_c2h6)                           &
+                 !    +emis_ant(i,k,j,p_e_c2h6)*conv
                 chem(i,k,j,p_c2h6)  = chem(i,k,j,p_c2h6)                           &
-                     +emis_ant(i,k,j,p_e_c2h6)*conv
+                     +emis_ant(i,k,j,p_e_eth)*conv
+                !chem(i,k,j,p_c3h8)  = chem(i,k,j,p_c3h8)                           &
+                 !    +emis_ant(i,k,j,p_e_c3h8)*conv
                 chem(i,k,j,p_c3h8)  = chem(i,k,j,p_c3h8)                           &
-                     +emis_ant(i,k,j,p_e_c3h8)*conv
+                     +emis_ant(i,k,j,p_e_hc3)*conv*0.5 ! qzr++ Temporary fix
+                !!chem(i,k,j,p_c3h8)  = chem(i,k,j,p_c3h8)                           &
+                 !!    +emis_ant(i,k,j,p_e_c3h8)*conv !! qzr++ Placeholder possible fix
+                !chem(i,k,j,p_c2h2)  = chem(i,k,j,p_c2h2)                           &
+                 !    +emis_ant(i,k,j,p_e_c2h2)*conv
                 chem(i,k,j,p_c2h2)  = chem(i,k,j,p_c2h2)                           &
-                     +emis_ant(i,k,j,p_e_c2h2)*conv
+                     +emis_ant(i,k,j,p_e_ace)*conv
+                !chem(i,k,j,p_alk3)  = chem(i,k,j,p_alk3)                           &
+                 !    +emis_ant(i,k,j,p_e_alk3)*conv
                 chem(i,k,j,p_alk3)  = chem(i,k,j,p_alk3)                           &
-                     +emis_ant(i,k,j,p_e_alk3)*conv
+                     +emis_ant(i,k,j,p_e_hc3)*conv*0.5 !qzr++ Temporary fix
+                !!chem(i,k,j,p_alk3)  = chem(i,k,j,p_alk3)                           &
+                  !!   +emis_ant(i,k,j,p_e_hc3)*conv !!qzr++ Placeholder possible fix
+                !chem(i,k,j,p_alk4)  = chem(i,k,j,p_alk4)                           &
+                 !    +emis_ant(i,k,j,p_e_alk4)*conv
                 chem(i,k,j,p_alk4)  = chem(i,k,j,p_alk4)                           &
-                     +emis_ant(i,k,j,p_e_alk4)*conv
+                     +emis_ant(i,k,j,p_e_hc5)*conv
 
 !!!!!!!!!!!!!!!!!!! CHARLES HE
                 !!CYCLE
 
 
                 chem(i,k,j,p_alk5)  = chem(i,k,j,p_alk5)                           &
-                     +emis_ant(i,k,j,p_e_alk5)*conv
+                     +emis_ant(i,k,j,p_e_hc8)*conv !+emis_ant(i,k,j,p_e_alk5)*conv
                 chem(i,k,j,p_ethene)  = chem(i,k,j,p_ethene)                       &
-                     +emis_ant(i,k,j,p_e_ethene)*conv
+                     +emis_ant(i,k,j,p_e_ol2)*conv !+emis_ant(i,k,j,p_e_ethene)*conv
                 chem(i,k,j,p_c3h6)  = chem(i,k,j,p_c3h6)                           &
-                     +emis_ant(i,k,j,p_e_c3h6)*conv
+                     +emis_ant(i,k,j,p_e_olt)*conv*0.5 ! qzr++ Temporary fix 
+                      !! qzr++ Placeholder possible fix (also original) -->   !+emis_ant(i,k,j,p_e_c3h6)*conv
                 chem(i,k,j,p_ole1)  = chem(i,k,j,p_ole1)                           &
-                     +emis_ant(i,k,j,p_e_ole1)*conv
+                     +emis_ant(i,k,j,p_e_olt)*conv*0.5 !qzr++ temp. fix !+emis_ant(i,k,j,p_e_ole1)*conv
+                     !!+emis_ant(i,k,j,p_e_olt)*conv !! qzr++ Placeholder possible fix
                 chem(i,k,j,p_ole2)  = chem(i,k,j,p_ole2)                           &
-                     +emis_ant(i,k,j,p_e_ole2)*conv
+                     +(emis_ant(i,k,j,p_e_oli)+emis_ant(i,k,j,p_e_dien))*conv !+emis_ant(i,k,j,p_e_ole2)*conv
                 chem(i,k,j,p_aro1)  = chem(i,k,j,p_aro1)                           &
-                     +emis_ant(i,k,j,p_e_aro1)*conv
+                     +emis_ant(i,k,j,p_e_ben)*conv !+emis_ant(i,k,j,p_e_aro1)*conv
                 chem(i,k,j,p_aro2)  = chem(i,k,j,p_aro2)                           &
-                     +emis_ant(i,k,j,p_e_aro2)*conv
+                     +(emis_ant(i,k,j,p_e_tol)+emis_ant(i,k,j,p_e_xyl)+            &
+                      emis_ant(i,k,j,p_e_xyo))*conv !+emis_ant(i,k,j,p_e_aro2)*conv
                 chem(i,k,j,p_hcho)  = chem(i,k,j,p_hcho)                           &
                      +emis_ant(i,k,j,p_e_hcho)*conv
                 chem(i,k,j,p_ccho)  = chem(i,k,j,p_ccho)                           &
-                     +emis_ant(i,k,j,p_e_ccho)*conv
+                     +emis_ant(i,k,j,p_e_acd)*conv !+emis_ant(i,k,j,p_e_ccho)*conv
                 chem(i,k,j,p_rcho)  = chem(i,k,j,p_rcho)                           &
-                     +emis_ant(i,k,j,p_e_rcho)*conv
+                     +(emis_ant(i,k,j,p_e_ald)+emis_ant(i,k,j,p_e_cald)+           &
+                       emis_ant(i,k,j,p_e_oald)+emis_ant(i,k,j,p_e_nald))*conv  !+emis_ant(i,k,j,p_e_rcho)*conv
                 chem(i,k,j,p_acet)  = chem(i,k,j,p_acet)                           &
-                     +emis_ant(i,k,j,p_e_acet)*conv
+                     +emis_ant(i,k,j,p_e_act)*conv !+emis_ant(i,k,j,p_e_acet)*conv
 
 !!!!!!!!!!!!!!!!!!! CHARLES HE
                 !!CYCLE
@@ -1555,7 +1578,7 @@ CONTAINS
                      +emis_ant(i,k,j,p_e_mek)*conv
 
                 chem(i,k,j,p_isoprene)  = chem(i,k,j,p_isoprene)                   &
-                     +emis_ant(i,k,j,p_e_isoprene)*conv
+                     +emis_ant(i,k,j,p_e_iso)*conv  !+emis_ant(i,k,j,p_e_isoprene)*conv
 
                 chem(i,k,j,p_terp)  = chem(i,k,j,p_terp)                           &
                      +emis_ant(i,k,j,p_e_terp)*conv
@@ -1570,7 +1593,7 @@ CONTAINS
                      +emis_ant(i,k,j,p_e_no)*conv*config_flags%uq_nox
 
                 chem(i,k,j,p_etoh)  = chem(i,k,j,p_etoh)&
-                     +emis_ant(i,k,j,p_e_etoh)*conv
+                     +emis_ant(i,k,j,p_e_eoh)*conv   !+emis_ant(i,k,j,p_e_etoh)*conv
                 
                 
                 !PRINT*, 'p_MEK = ', p_MEK
@@ -1605,9 +1628,9 @@ CONTAINS
                 chem(i,k,j,p_phen)  = chem(i,k,j,p_phen)                           &
                      +emis_ant(i,k,j,p_e_phen)*conv
                 chem(i,k,j,p_cres)  = chem(i,k,j,p_cres)                           &
-                     +emis_ant(i,k,j,p_e_cres)*conv
+                     +(emis_ant(i,k,j,p_e_csl)+emis_ant(i,k,j,p_e_mct))*conv  !+emis_ant(i,k,j,p_e_cres)*conv
                 chem(i,k,j,p_meoh)  = chem(i,k,j,p_meoh)                           &
-                     +emis_ant(i,k,j,p_e_meoh)*conv
+                     +emis_ant(i,k,j,p_e_moh)*conv   !+emis_ant(i,k,j,p_e_meoh)*conv
                 chem(i,k,j,p_gly)  = chem(i,k,j,p_gly)                             &
                      +emis_ant(i,k,j,p_e_gly)*conv
                 chem(i,k,j,p_mgly)  = chem(i,k,j,p_mgly)                           &
@@ -1615,23 +1638,27 @@ CONTAINS
                 chem(i,k,j,p_bacl)  = chem(i,k,j,p_bacl)                           &
                      +emis_ant(i,k,j,p_e_bacl)*conv
                 chem(i,k,j,p_isoprod)  = chem(i,k,j,p_isoprod)                     &
-                     +emis_ant(i,k,j,p_e_isoprod)*conv
+                     +emis_ant(i,k,j,p_e_ket)*conv*0.5 !qzr++ temporary fix
+                     !!Placeholder possible fix (also Original) -->   !+emis_ant(i,k,j,p_e_isoprod)*conv
                 chem(i,k,j,p_methacro)  = chem(i,k,j,p_methacro)                   &
-                     +emis_ant(i,k,j,p_e_methacro)*conv
+                     +(emis_ant(i,k,j,p_e_macr)+emis_ant(i,k,j,p_e_cuald))*conv !+emis_ant(i,k,j,p_e_methacro)*conv
                 chem(i,k,j,p_mvk)  = chem(i,k,j,p_mvk)                             &
                      +emis_ant(i,k,j,p_e_mvk)*conv
                 chem(i,k,j,p_prod2)  = chem(i,k,j,p_prod2)                         &
-                     +emis_ant(i,k,j,p_e_prod2)*conv
+                     +emis_ant(i,k,j,p_e_ket)*conv*0.5 !qzr++ temp. fix   !+emis_ant(i,k,j,p_e_prod2)*conv
+                     !!+emis_ant(i,k,j,p_e_ket)*conv   !!Placeholder possible fix
                 chem(i,k,j,p_ch4)  = chem(i,k,j,p_ch4)                             &
                      +emis_ant(i,k,j,p_e_ch4)*conv
                 chem(i,k,j,p_bald)  = chem(i,k,j,p_bald)                           &
                      +emis_ant(i,k,j,p_e_bald)*conv
                 chem(i,k,j,p_hcooh)  = chem(i,k,j,p_hcooh)                         &
-                     +emis_ant(i,k,j,p_e_hcooh)*conv
+                     +emis_ant(i,k,j,p_e_ora1)*conv   !+emis_ant(i,k,j,p_e_hcooh)*conv
                 chem(i,k,j,p_cco_oh)  = chem(i,k,j,p_cco_oh)                       &
-                     +emis_ant(i,k,j,p_e_cco_oh)*conv
+                     +emis_ant(i,k,j,p_e_ora2)*conv*0.5 !qzr++ temp. fix
+                     !!Placehlder permanent fix (also original) -->  !+emis_ant(i,k,j,p_e_cco_oh)*conv
                 chem(i,k,j,p_rco_oh)  = chem(i,k,j,p_rco_oh)                       &
-                     +emis_ant(i,k,j,p_e_rco_oh)*conv
+                     +emis_ant(i,k,j,p_e_ora2)*conv*0.5 !qzr++ temp. fix  !+emis_ant(i,k,j,p_e_rco_oh)*conv
+                     !!+emis_ant(i,k,j,p_e_ora2)*conv   !! Placeholder possible fix
                 chem(i,k,j,p_nh3)  = chem(i,k,j,p_nh3)                       &
                      +emis_ant(i,k,j,p_e_nh3)*conv
 
@@ -1652,40 +1679,48 @@ CONTAINS
                                                                                     !Given POA emissions uncertainty assume fossil POA is non-volatile too
 
 !!!! HERE THE EMISSION OF IVOCs IS DEFINED. !Accounts for evaporat of 60% of POA (Jathar et al. PNAS)
-
+          !qzr++ racm2b_vcp to SSM Anth mapping
          chem(i,k,j,p_pcg7_f_c)  =  & 
-         chem(i,k,j,p_pcg7_f_c)  + (emis_ant(i,k,j,p_e_c2h6)*conv  &
-                                 +  emis_ant(i,k,j,p_e_c3h8)*conv  &
-                                   +emis_ant(i,k,j,p_e_c2h2)*conv  &
-                                   +emis_ant(i,k,j,p_e_alk3)*conv  &
-                                   +emis_ant(i,k,j,p_e_alk4)*conv  &
-                                   +emis_ant(i,k,j,p_e_alk5)*conv  &
-                                   +emis_ant(i,k,j,p_e_ethene)*conv &
-                                   +emis_ant(i,k,j,p_e_c3h6)*conv   &
-                                   +emis_ant(i,k,j,p_e_ole1)*conv   &
-                                   +emis_ant(i,k,j,p_e_ole2)*conv   &
-                                   +emis_ant(i,k,j,p_e_aro1)*conv   &
-                                   +emis_ant(i,k,j,p_e_aro2)*conv   &
+         chem(i,k,j,p_pcg7_f_c)  + (emis_ant(i,k,j,p_e_eth)*conv  & !p_e_c2h6)*conv  &
+                                 !!+  emis_ant(i,k,j,p_e_c3h8)*conv  & !qzr++ uncomment if c3h8 separate
+                                   +emis_ant(i,k,j,p_e_ace)*conv  & !p_e_c2h2)*conv  &
+                                   +emis_ant(i,k,j,p_e_hc3)*conv  &  !p_e_alk3)*conv  &
+                                   +emis_ant(i,k,j,p_e_hc5)*conv  &  !p_e_alk4)*conv  &
+                                   +emis_ant(i,k,j,p_e_hc8)*conv  &  !p_e_alk5)*conv  &
+                                   +emis_ant(i,k,j,p_e_ol2)*conv  & !p_e_ethene)*conv &
+                                   !!+emis_ant(i,k,j,p_e_c3h6)*conv   & !qzr++ uncomment if c3h6 separate
+                                   +emis_ant(i,k,j,p_e_olt)*conv & !p_e_ole1)*conv   &
+                                   +(emis_ant(i,k,j,p_e_dien)+  &
+                                    emis_ant(i,k,j,p_e_oli))*conv  & !emis_ant(i,k,j,p_e_ole2)*conv   &
+                                   +emis_ant(i,k,j,p_e_ben)*conv  &  !p_e_aro1)*conv   &
+                                   +(emis_ant(i,k,j,p_e_tol)+  &
+                                     emis_ant(i,k,j,p_e_xyl)+      &
+                                     emis_ant(i,k,j,p_e_xyo))*conv & !emis_ant(i,k,j,p_e_aro2)*conv   &
                                    +emis_ant(i,k,j,p_e_hcho)*conv   &
-                                   +emis_ant(i,k,j,p_e_ccho)*conv   &
-                                   +emis_ant(i,k,j,p_e_rcho)*conv   &
-                                   +emis_ant(i,k,j,p_e_acet)*conv   &
+                                   +emis_ant(i,k,j,p_e_acd)*conv  & !p_e_ccho)*conv   &
+                                   +(emis_ant(i,k,j,p_e_ald)+  &
+                                    emis_ant(i,k,j,p_e_cald)+      &
+                                    emis_ant(i,k,j,p_e_oald)+      &
+                                    emis_ant(i,k,j,p_e_nald))*conv & !emis_ant(i,k,j,p_e_rcho)*conv   &
+                                   +emis_ant(i,k,j,p_e_act)*conv   & !p_e_acet)*conv   &
                                    +emis_ant(i,k,j,p_e_mek)*conv    &
-                                   +emis_ant(i,k,j,p_e_isoprene)*conv &
+                                   +emis_ant(i,k,j,p_e_iso)*conv   & !p_e_isoprene)*conv &
                                    +emis_ant(i,k,j,p_e_terp)*conv     &
                                    +emis_ant(i,k,j,p_e_phen)*conv     &
-                                   +emis_ant(i,k,j,p_e_cres)*conv     &
-                                   +emis_ant(i,k,j,p_e_meoh)*conv     &
+                                   +(emis_ant(i,k,j,p_e_csl)+      &
+                                     emis_ant(i,k,j,p_e_mct))*conv & !emis_ant(i,k,j,p_e_cres)*conv     &
+                                   +emis_ant(i,k,j,p_e_moh)*conv   & !p_e_meoh)*conv     &
                                    +emis_ant(i,k,j,p_e_gly)*conv      &
                                    +emis_ant(i,k,j,p_e_mgly)*conv    &
                                    +emis_ant(i,k,j,p_e_bacl)*conv     &
-                                   +emis_ant(i,k,j,p_e_isoprod)*conv  &
-                                   +emis_ant(i,k,j,p_e_methacro)*conv &
+                                   !!+emis_ant(i,k,j,p_e_isoprod)*conv  & !qzr++ uncomment if isoprod separate
+                                   +(emis_ant(i,k,j,p_e_macr)+     &
+                                    emis_ant(i,k,j,p_e_cuald))*conv & !+emis_ant(i,k,j,p_e_methacro)*conv &
                                    +emis_ant(i,k,j,p_e_mvk)*conv      &
-                                   +emis_ant(i,k,j,p_e_prod2)*conv    &
+                                   +emis_ant(i,k,j,p_e_ket)*conv   & !+emis_ant(i,k,j,p_e_prod2)*conv    &
                                    +emis_ant(i,k,j,p_e_bald)*conv     &
-                                   +emis_ant(i,k,j,p_e_etoh)*conv     &
-                                   +emis_ant(i,k,j,p_e_hcooh)*conv) *0.20 !20% of NMOC emissions assumed to be IVOCs
+                                   +emis_ant(i,k,j,p_e_eoh)*conv    & !p_e_etoh)*conv     &
+                                   +emis_ant(i,k,j,p_e_ora1)*conv)*0.20 !emis_ant(i,k,j,p_e_hcooh)*conv) *0.20 !20% of NMOC emissions assumed to be IVOCs
 
              end do
           end do
