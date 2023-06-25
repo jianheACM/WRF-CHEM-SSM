@@ -836,6 +836,7 @@ CONTAINS
 !  endif !---YZ0220
 !!**************** END FIRE, BEGIN BIOGENIC EMISSIONS
 !  QZR++ oVCPs added from racm2b_vcp for beis SSM CA 12 km
+! QZR++ for running BEIS add SAPRC99_SIMPLESOM_MOSAIC_4BIN_AQ_KPP in list of mechs Line 855
     bioem_select: SELECT CASE(config_flags%bio_emiss_opt)
      CASE (GUNTHER1)
        if(ktau.eq.1.or.mod(ktau,stepbioe).eq.0)then
@@ -854,6 +855,7 @@ CONTAINS
             CASE (RADM2, RADM2_KPP, RADM2SORG, RADM2SORG_AQ, RADM2SORG_AQCHEM, RADM2SORG_KPP, &
                   RACM_KPP, RACMPM_KPP, RACM_MIM_KPP, RACMSORG_AQ,RACMSORG_AQCHEM_KPP,        &
                   RACM_ESRLSORG_AQCHEM_KPP, RACMSORG_KPP,RACM_ESRLSORG_KPP, RACM_SOA_VBS_KPP, &
+                  SAPRC99_SIMPLESOM_MOSAIC_4BIN_AQ_KPP,        &
                   RACM_SOA_VBS_AQCHEM_KPP, RACM_SOA_VBS_HET_KPP, CBM4_KPP, NMHC9_KPP, GOCARTRACM_KPP,GOCARTRADM2)
             CASE DEFAULT 
                CALL wrf_error_fatal( &
