@@ -115,8 +115,10 @@ state    real  e_bigalk       i+jf     emis_ant     1         Z      i5     "E_B
 state    real  e_bigene       i+jf     emis_ant     1         Z      i5     "E_BIGENE"     "EMISSIONS BIGENE"            "mol km^-2 hr^-1"
 state    real  e_c2h4         i+jf     emis_ant     1         Z      i5     "E_C2H4"       "EMISSIONS C2H4"              "mol km^-2 hr^-1"
 state    real  e_c2h6         i+jf     emis_ant     1         Z      i5      "E_C2H6"       "EMISSIONS C2H6"              "mol km^-2 hr^-1"
-state    real  e_c3h6         i+jf     emis_ant     1         Z      i5      "E_C3H6"       "EMISSIONS C3H6"              "mol km^-2 hr^-1"
-state    real  e_c3h8         i+jf     emis_ant     1         Z      i5      "E_C3H8"       "EMISSIONS C3H8"              "mol km^-2 hr^-1"
+##QZR++ changed 'i5' to 'i5r' for consistensy (wrfchemi racm2b_vcp mapping to SSM: c3h6 and c3h8 mapped seprately now)
+state    real  e_c3h6         i+jf     emis_ant     1         Z      i5r     "E_C3H6"       "EMISSIONS C3H6"              "mol km^-2 hr^-1"
+state    real  e_c3h8         i+jf     emis_ant     1         Z      i5r     "E_C3H8"       "EMISSIONS C3H8"              "mol km^-2 hr^-1"
+##QZR++ end
 state    real  e_ch2o         i+jf     emis_ant     1         Z      i5     "E_CH2O"       "EMISSIONS CH2O"              "mol km^-2 hr^-1"
 state    real  e_ch3cho       i+jf     emis_ant     1         Z      i5     "E_CH3CHO"     "EMISSIONS CH3CHO"            "mol km^-2 hr^-1"
 state    real  e_ch3coch3     i+jf     emis_ant     1         Z      i5     "E_CH3COCH3"   "EMISSIONS CH3COCH3"          "mol km^-2 hr^-1"
@@ -268,6 +270,7 @@ state   real    e_meoh          i+jf    emis_ant        1       Z       i5r     
 state   real    e_gly           i+jf    emis_ant        1       Z       i5r      "E_GLY" "GLY emissions" "mol km^-2 hr^-1"
 state   real    e_mgly          i+jf    emis_ant        1       Z       i5r      "E_MGLY"        "MGLY emissions"        "mol km^-2 hr^-1"
 state   real    e_bacl          i+jf    emis_ant        1       Z       i5r      "E_BACL"        "BACL emissions"        "mol km^-2 hr^-1"
+##QZR++ rcm2b_vcp to SSM Anth mapping isoprod and cco_oh separately mapped now
 state   real    e_isoprod       i+jf    emis_ant        1       Z       i5r      "E_ISOPROD"     "ISOPROD emissions"     "mol km^-2 hr^-1"
 state   real    e_methacro      i+jf    emis_ant        1       Z       i5r      "E_METHACRO"    "METHACRO emissions"    "mol km^-2 hr^-1"
 state   real    e_mvk           i+jf    emis_ant        1       Z       i5r      "E_MVK" "MVK emissions" "mol km^-2 hr^-1"
@@ -7293,7 +7296,7 @@ package   cri_mosaic_4bin_aq_kpp  chem_opt==611          -             chem:dms,
 #emission package definitions
 #
 package   eradm           emiss_opt==2                   -             emis_ant:e_iso,e_so2,e_no,e_co,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3
-package   eradmsorg       emiss_opt==3                   -             emis_ant:e_iso,e_so2,e_no,e_no2,e_co,e_ch4,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_moh,e_eoh,e_act,e_acd,e_ace,e_mct,e_ben,e_xyo,e_dien,e_pm25i,e_pm25j,e_pm_10,e_eci,e_ecj,e_orgi,e_orgj,e_so4i,e_so4j,e_nald,e_oald,e_cald,e_cuald,e_ora1,e_no3i,e_no3j,e_naaj,e_naai,e_orgi_a,e_orgj_a,e_orgi_bb,e_orgj_bb,e_hcl,e_cli,e_clj,e_ch3cl
+package   eradmsorg       emiss_opt==3                   -             emis_ant:e_iso,e_so2,e_no,e_no2,e_co,e_ch4,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_moh,e_eoh,e_act,e_acd,e_ace,e_mct,e_ben,e_xyo,e_dien,e_pm25i,e_pm25j,e_pm_10,e_eci,e_ecj,e_orgi,e_orgj,e_so4i,e_so4j,e_c3h6,e_c3h8,e_isoprod,e_cco_oh,e_nald,e_oald,e_cald,e_cuald,e_ora1,e_no3i,e_no3j,e_naaj,e_naai,e_orgi_a,e_orgj_a,e_orgi_bb,e_orgj_bb,e_hcl,e_cli,e_clj,e_ch3cl
 package   ecbmz_mosaic    emiss_opt==4                   -             emis_ant:e_iso,e_so2,e_no,e_co,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_no2,e_ch3oh,e_c2h5oh,e_pm25i,e_pm25j,e_eci,e_ecj,e_orgi,e_orgj,e_so4i,e_so4j,e_no3i,e_no3j,e_so4c,e_no3c,e_orgc,e_ecc
 package   ecptec          emiss_opt==5                   -             emis_ant:e_iso,e_so2,e_no,e_no2,e_co,e_eth,e_hc3,e_hc5,e_hc8,e_xyl,e_ol2,e_olt,e_oli,e_tol,e_csl,e_hcho,e_ald,e_ket,e_ora2,e_nh3,e_pm_25,e_pm_10,e_oc,e_sulf,e_bc
 package   gocart_ecptec   emiss_opt==6                   -             emis_ant:e_so2,e_sulf,e_bc,e_oc,e_pm_25,e_pm_10

@@ -1521,22 +1521,24 @@ CONTAINS
                  !    +emis_ant(i,k,j,p_e_c2h6)*conv
                 chem(i,k,j,p_c2h6)  = chem(i,k,j,p_c2h6)                           &
                      +emis_ant(i,k,j,p_e_eth)*conv
-                !chem(i,k,j,p_c3h8)  = chem(i,k,j,p_c3h8)                           &
-                 !    +emis_ant(i,k,j,p_e_c3h8)*conv
                 chem(i,k,j,p_c3h8)  = chem(i,k,j,p_c3h8)                           &
-                     +emis_ant(i,k,j,p_e_hc3)*conv*0.5 ! qzr++ Temporary fix
+                     +emis_ant(i,k,j,p_e_c3h8)*conv      !qzr++ FIXED, e_c3h8 in charkins wrfchemi now, 06/2023
+                !chem(i,k,j,p_c3h8)  = chem(i,k,j,p_c3h8)                           &
+                     !+emis_ant(i,k,j,p_e_hc3)*conv*0.5 ! qzr++ Temporary fix,
+                                                        !!qzr++ COMMENTED NOW, 06/2023
                 !!chem(i,k,j,p_c3h8)  = chem(i,k,j,p_c3h8)                           &
-                 !!    +emis_ant(i,k,j,p_e_c3h8)*conv !! qzr++ Placeholder possible fix
+                 !!    +emis_ant(i,k,j,p_e_c3h8)*conv !! qzr++ Placeholder possible fix (Orig SSM also)
                 !chem(i,k,j,p_c2h2)  = chem(i,k,j,p_c2h2)                           &
                  !    +emis_ant(i,k,j,p_e_c2h2)*conv
                 chem(i,k,j,p_c2h2)  = chem(i,k,j,p_c2h2)                           &
                      +emis_ant(i,k,j,p_e_ace)*conv
                 !chem(i,k,j,p_alk3)  = chem(i,k,j,p_alk3)                           &
                  !    +emis_ant(i,k,j,p_e_alk3)*conv
+                !chem(i,k,j,p_alk3)  = chem(i,k,j,p_alk3)                           &
+                     !+emis_ant(i,k,j,p_e_hc3)*conv*0.5 !qzr++ Temporary fix
+                                                        !!qzr++ COMMENTED NOW, 06/2023
                 chem(i,k,j,p_alk3)  = chem(i,k,j,p_alk3)                           &
-                     +emis_ant(i,k,j,p_e_hc3)*conv*0.5 !qzr++ Temporary fix
-                !!chem(i,k,j,p_alk3)  = chem(i,k,j,p_alk3)                           &
-                  !!   +emis_ant(i,k,j,p_e_hc3)*conv !!qzr++ Placeholder possible fix
+                     +emis_ant(i,k,j,p_e_hc3)*conv !!qzr++ Placeholder possible fix (FIXED , see c3h8 fix above , 06/2023)
                 !chem(i,k,j,p_alk4)  = chem(i,k,j,p_alk4)                           &
                  !    +emis_ant(i,k,j,p_e_alk4)*conv
                 chem(i,k,j,p_alk4)  = chem(i,k,j,p_alk4)                           &
@@ -1550,12 +1552,18 @@ CONTAINS
                      +emis_ant(i,k,j,p_e_hc8)*conv !+emis_ant(i,k,j,p_e_alk5)*conv
                 chem(i,k,j,p_ethene)  = chem(i,k,j,p_ethene)                       &
                      +emis_ant(i,k,j,p_e_ol2)*conv !+emis_ant(i,k,j,p_e_ethene)*conv
-                chem(i,k,j,p_c3h6)  = chem(i,k,j,p_c3h6)                           &
-                     +emis_ant(i,k,j,p_e_olt)*conv*0.5 ! qzr++ Temporary fix 
+                !chem(i,k,j,p_c3h6)  = chem(i,k,j,p_c3h6)                           &
+                     !+emis_ant(i,k,j,p_e_olt)*conv*0.5 ! qzr++ Temporary fix 
+                                                        !!qzr++ COMMENTED NOW, 06/2023
                       !! qzr++ Placeholder possible fix (also original) -->   !+emis_ant(i,k,j,p_e_c3h6)*conv
-                chem(i,k,j,p_ole1)  = chem(i,k,j,p_ole1)                           &
-                     +emis_ant(i,k,j,p_e_olt)*conv*0.5 !qzr++ temp. fix !+emis_ant(i,k,j,p_e_ole1)*conv
+                chem(i,k,j,p_c3h6)  = chem(i,k,j,p_c3h6)                           &
+                     +emis_ant(i,k,j,p_e_c3h6)*conv    !!qzr++ FIXED now, e_c3h6 in charkins wrfchemi now, 06/2023
+                !chem(i,k,j,p_ole1)  = chem(i,k,j,p_ole1)                           &
+                     !+emis_ant(i,k,j,p_e_olt)*conv*0.5 !qzr++ temp. fix !+emis_ant(i,k,j,p_e_ole1)*conv
+                                                        !!qzr++ COMMENTED NOW, 06/2023
                      !!+emis_ant(i,k,j,p_e_olt)*conv !! qzr++ Placeholder possible fix
+                chem(i,k,j,p_ole1)  = chem(i,k,j,p_ole1)                           &
+                     +emis_ant(i,k,j,p_e_olt)*conv   !qzr++ FIXED now, see c3h6 fix above, 06/2023
                 chem(i,k,j,p_ole2)  = chem(i,k,j,p_ole2)                           &
                      +(emis_ant(i,k,j,p_e_oli)+emis_ant(i,k,j,p_e_dien))*conv !+emis_ant(i,k,j,p_e_ole2)*conv
                 chem(i,k,j,p_aro1)  = chem(i,k,j,p_aro1)                           &
@@ -1639,28 +1647,41 @@ CONTAINS
                      +emis_ant(i,k,j,p_e_mgly)*conv
                 chem(i,k,j,p_bacl)  = chem(i,k,j,p_bacl)                           &
                      +emis_ant(i,k,j,p_e_bacl)*conv
-                chem(i,k,j,p_isoprod)  = chem(i,k,j,p_isoprod)                     &
-                     +emis_ant(i,k,j,p_e_ket)*conv*0.5 !qzr++ temporary fix
+                !chem(i,k,j,p_isoprod)  = chem(i,k,j,p_isoprod)                     &
+                     !+emis_ant(i,k,j,p_e_ket)*conv*0.5 !qzr++ temporary fix  
+                                                        !!qzr++ 06/2023    COMMENTED NOW
                      !!Placeholder possible fix (also Original) -->   !+emis_ant(i,k,j,p_e_isoprod)*conv
+                chem(i,k,j,p_isoprod)  = chem(i,k,j,p_isoprod)                      &
+                     +emis_ant(i,k,j,p_e_isoprod)*conv  !qzr++ FIXED same as Original SSM, e_isoprod in charkins wrfchemi input 06/2023
                 chem(i,k,j,p_methacro)  = chem(i,k,j,p_methacro)                   &
                      +(emis_ant(i,k,j,p_e_macr)+emis_ant(i,k,j,p_e_cuald))*conv !+emis_ant(i,k,j,p_e_methacro)*conv
                 chem(i,k,j,p_mvk)  = chem(i,k,j,p_mvk)                             &
                      +emis_ant(i,k,j,p_e_mvk)*conv
-                chem(i,k,j,p_prod2)  = chem(i,k,j,p_prod2)                         &
-                     +emis_ant(i,k,j,p_e_ket)*conv*0.5 !qzr++ temp. fix   !+emis_ant(i,k,j,p_e_prod2)*conv
+                !chem(i,k,j,p_prod2)  = chem(i,k,j,p_prod2)                         &
+                     !+emis_ant(i,k,j,p_e_ket)*conv*0.5 !qzr++ temp. fix   !+emis_ant(i,k,j,p_e_prod2)*conv
+                                                        !!qzr++ 06/2023 COMMENTED NOW
                      !!+emis_ant(i,k,j,p_e_ket)*conv   !!Placeholder possible fix
+                chem(i,k,j,p_prod2)  = chem(i,k,j,p_prod2)                         &
+                     +emis_ant(i,k,j,p_e_ket)*conv !qzr++ FIXED, see isoprod fix above, 06/2023
+                      !+emis_ant(i,k,j,p_e_prod2)*conv
                 chem(i,k,j,p_ch4)  = chem(i,k,j,p_ch4)                             &
                      +emis_ant(i,k,j,p_e_ch4)*conv
                 chem(i,k,j,p_bald)  = chem(i,k,j,p_bald)                           &
                      +emis_ant(i,k,j,p_e_bald)*conv
                 chem(i,k,j,p_hcooh)  = chem(i,k,j,p_hcooh)                         &
                      +emis_ant(i,k,j,p_e_ora1)*conv   !+emis_ant(i,k,j,p_e_hcooh)*conv
-                chem(i,k,j,p_cco_oh)  = chem(i,k,j,p_cco_oh)                       &
-                     +emis_ant(i,k,j,p_e_ora2)*conv*0.5 !qzr++ temp. fix
+                !chem(i,k,j,p_cco_oh)  = chem(i,k,j,p_cco_oh)                       &
+                     !+emis_ant(i,k,j,p_e_ora2)*conv*0.5 !qzr++ temp. fix
+                                                         !! qzr++ COMMENTED NOW, 06/2023
                      !!Placehlder permanent fix (also original) -->  !+emis_ant(i,k,j,p_e_cco_oh)*conv
-                chem(i,k,j,p_rco_oh)  = chem(i,k,j,p_rco_oh)                       &
-                     +emis_ant(i,k,j,p_e_ora2)*conv*0.5 !qzr++ temp. fix  !+emis_ant(i,k,j,p_e_rco_oh)*conv
+                chem(i,k,j,p_cco_oh)  = chem(i,k,j,p_cco_oh)                       &
+                     +emis_ant(i,k,j,p_e_cco_oh)*conv     !qzr++ FIXED, e_cco_oh now in charkins wrfchemi 06/2023 
+                !chem(i,k,j,p_rco_oh)  = chem(i,k,j,p_rco_oh)                       &
+                     !+emis_ant(i,k,j,p_e_ora2)*conv*0.5 !qzr++ temp. fix  !+emis_ant(i,k,j,p_e_rco_oh)*conv
+                                                         !!qzr++ COMMENTED NOW, 06/2023
                      !!+emis_ant(i,k,j,p_e_ora2)*conv   !! Placeholder possible fix
+                chem(i,k,j,p_rco_oh)  = chem(i,k,j,p_rco_oh)                 &
+                     +emis_ant(i,k,j,p_e_ora2)*conv     !qzr++ FIXED, see cco_oh fix above, 06/2023
                 chem(i,k,j,p_nh3)  = chem(i,k,j,p_nh3)                       &
                      +emis_ant(i,k,j,p_e_nh3)*conv
 
@@ -1684,13 +1705,13 @@ CONTAINS
           !qzr++ racm2b_vcp to SSM Anth mapping
          chem(i,k,j,p_pcg7_f_c)  =  & 
          chem(i,k,j,p_pcg7_f_c)  + (emis_ant(i,k,j,p_e_eth)*conv  & !p_e_c2h6)*conv  &
-                                 !!+  emis_ant(i,k,j,p_e_c3h8)*conv  & !qzr++ uncomment if c3h8 separate
+                                   +  emis_ant(i,k,j,p_e_c3h8)*conv  & !qzr++ uncomment if c3h8 separate, FIXED 06/2023
                                    +emis_ant(i,k,j,p_e_ace)*conv  & !p_e_c2h2)*conv  &
                                    +emis_ant(i,k,j,p_e_hc3)*conv  &  !p_e_alk3)*conv  &
                                    +emis_ant(i,k,j,p_e_hc5)*conv  &  !p_e_alk4)*conv  &
                                    +emis_ant(i,k,j,p_e_hc8)*conv  &  !p_e_alk5)*conv  &
                                    +emis_ant(i,k,j,p_e_ol2)*conv  & !p_e_ethene)*conv &
-                                   !!+emis_ant(i,k,j,p_e_c3h6)*conv   & !qzr++ uncomment if c3h6 separate
+                                   +emis_ant(i,k,j,p_e_c3h6)*conv   & !qzr++ uncomment if c3h6 separate, FIXED 06/2023
                                    +emis_ant(i,k,j,p_e_olt)*conv & !p_e_ole1)*conv   &
                                    +(emis_ant(i,k,j,p_e_dien)+  &
                                     emis_ant(i,k,j,p_e_oli))*conv  & !emis_ant(i,k,j,p_e_ole2)*conv   &
@@ -1715,7 +1736,7 @@ CONTAINS
                                    +emis_ant(i,k,j,p_e_gly)*conv      &
                                    +emis_ant(i,k,j,p_e_mgly)*conv    &
                                    +emis_ant(i,k,j,p_e_bacl)*conv     &
-                                   !!+emis_ant(i,k,j,p_e_isoprod)*conv  & !qzr++ uncomment if isoprod separate
+                                   +emis_ant(i,k,j,p_e_isoprod)*conv  & !qzr++ uncomment if isoprod separate , FIXED 06/2023 qzr++
                                    +(emis_ant(i,k,j,p_e_macr)+     &
                                     emis_ant(i,k,j,p_e_cuald))*conv & !+emis_ant(i,k,j,p_e_methacro)*conv &
                                    +emis_ant(i,k,j,p_e_mvk)*conv      &
