@@ -1692,8 +1692,10 @@ CONTAINS
 
 
 ! THIS IS POA MASS????
-         chem(i,k,j,p_pcg1_f_c) = & 
-         chem(i,k,j,p_pcg1_f_c) + (emis_ant(i,k,j,p_e_orgi_a) + emis_ant(i,k,j,p_e_orgj_a))*conv3*1.4 
+         chem(i,k,j,p_pcg1_f_c) =   &
+         chem(i,k,j,p_pcg1_f_c) + (emis_ant(i,k,j,p_e_orgi) + emis_ant(i,k,j,p_e_orgj))*conv3  !qzr++ 1.4 OM/OC avg of 1.57 and 1.25, but Colin's wrfchemi is OM ug
+!         chem(i,k,j,p_pcg1_f_c) = &
+!         chem(i,k,j,p_pcg1_f_c) + (emis_ant(i,k,j,p_e_orgi_a) + emis_ant(i,k,j,p_e_orgj_a))*conv3*1.4 
 
 ! VOCALS is OC for fossil fuel, apply 1.4 to convert to OM                       
 ! Biomass burning POA is now part of OC array in module_add_emiss_burn.F
