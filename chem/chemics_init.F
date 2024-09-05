@@ -320,7 +320,8 @@ call wrf_message("**************************************************************
      if (config_flags%chem_opt /= mozart_mosaic_4bin_kpp .and. &
          config_flags%chem_opt /= mozart_mosaic_4bin_aq_kpp .and. &
          config_flags%chem_opt /= mozcart_kpp .and. &
-         config_flags%chem_opt /= t1_mozcart_kpp) THEN
+         config_flags%chem_opt /= t1_mozcart_kpp .and. &
+         config_flags%chem_opt /= saprc99_simplesom_mosaic_4bin_aq_kpp) THEN
        write(message_txt,'(''--- ERROR: chem_opt '',i3,'' not setup for TUV photolysis at this time'')') &
               config_flags%chem_opt
        CALL wrf_error_fatal( trim(message_txt) )
